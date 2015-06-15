@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Positioning Exercise</title>
+	<style type="text/css">
+
+	a:hover {
+        background-color: yellow;
+    }
+    div {
+        border: 1px;
+        border-color: black;
+        border-style: solid;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        margin-top: 50px;
+        position: relative;
+    }
+    #ribbon {
+        float: right;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+    }
+	.link {
+        color: purple;
+        text-decoration: underline;
+	}
+    .red {
+        background-color: red;
+        color: white;
+        float: left;
+        margin-top: 40px;
+    }
+    .orange {
+        margin-left: 50px;
+        background-color: orange;
+        color: white;
+        float: left;
+        margin-top: 40px;
+    }
+    .yellow {
+        margin-left: 50px;
+        background-color: yellow;
+        color: black;
+        float: left;
+        margin-top: 40px;
+    }
+    .green {
+        background-color: green;
+        color: white;
+        float: left;
+        clear: both;
+    }
+    .blue {
+        margin-left: 50px;
+        background-color: blue;
+        color: white;
+        float: left;
+    }
+    .plum {
+        margin-top: 50px;
+        margin-left: 50px;
+        background-color: plum;
+        color: white;
+        float: left;
+    }
+    .img1 {
+        position: absolute;
+        left: 60px;
+    }
+    .img2 {
+        position: absolute;
+        left: 180px;
+    }
+    .img3 {
+        position: absolute;
+        left: 300px;
+    }
+    .img4 {
+        position: absolute;
+        left: 60px;
+        margin-top: 125px;
+    }
+    .img5 {
+        position: absolute;
+        left: 180px;
+        margin-top: 125px;
+    }
+    .img6 {
+        position: absolute;
+        left: 300px;
+        margin-top: 125px;
+    }
+	</style>
+</head>
+  <body>
+    <img id="ribbon" src="/img/codeup-ribbon.png">
+	<h1 id="link">
+	<a href="http://en.wikipedia.org/wiki/Box_model" target="blank">
+    Visible Spectrum Wavelengths
+    </a>
+	</h1>
+	<!-- <a href="#plum">Go to plum</a> -->
+    <img class="img6" src="/img/codeup-arrow.png">
+    <img class="img5" src="/img/codeup-arrow.png">
+    <img class="img4" src="/img/codeup-arrow.png">
+    <img class="img3" src="/img/codeup-arrow.png">
+    <img class="img2" src="/img/codeup-arrow.png">
+    <img class="img1" src="/img/codeup-arrow.png">
+    <span id="box">
+    <div class="red">
+        620-750 nm
+    </div>
+	<div class="orange">
+        590-620 nm
+    </div>
+	<div class="yellow">
+        570-590 nm
+    </div>
+	<div class="green">
+        495-570 nm
+    </div>
+	<div class="blue">
+        450-495 nm
+    </div>
+	<div class="plum">
+        380-450 nm
+    </div>
+    </span>
+  </body>
+</html>
