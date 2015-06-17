@@ -13,12 +13,8 @@ var favorite = 'green'; {// TODO: change this to your favorite color from the li
 	console.log("Red is the color of fire.")
 }else if (color == "blue") {
 	console.log("Blue is the color of the ocean.")
-}else if (color == "indigo") {
-	console.log("I do not know anything by that color")
-}else if (color == "violet") {
-	console.log("I do not know anything by that color")
 }else {
-	console.log("")
+	console.log("I do not know anything by that color")
 }
 // TODO: Create a block of if/else statements to check for every color except indigo and violet.
 // TODO: When a color is encountered log a message that tells the color, and an object of that color.
