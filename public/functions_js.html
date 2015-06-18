@@ -6,11 +6,11 @@
 <body> 
 <h1> Testing </h1>
 <script type="text/javascript">
-var myNameIs = ("David") // todo: Fill in your name here.
- function sayHello(myNameIs)
- {
- 	console.log("hello" + myNameIs);
- }
+( function () {
+	function sayHello(name) {
+		return 'Hello, ' + name;
+	}
+}
 // todo:
 // Create a function called 'sayHello' that takes a parameter 'name'.
 // When called, the function should log a message that says hello from the passed in name.
@@ -19,16 +19,20 @@ var myNameIs = ("David") // todo: Fill in your name here.
 
 // do not worry about the details of this line
 // just know that it generates a random number between 1 and 100
-var random = Math.floor((Math.random()*100)+1);
 
-function is0dd(random)
-{
-	if(random % 2 == 1) {
-		console.log(random + "Is odd.")
-}	else{
-		console.log(random + "Is even.")
-	}
+function isOdd(number) {
+ var message = (number % 2 !== 0) ? number + ' is odd': number + ' is even';
+ return message;
 }
+var myNameIs = "Codeup";
+var random = Math.floor((Math.random()*100)+1);
+var message = sayHello(myNameIs);
+
+ console.log(message);
+
+ var result = isOdd(random);
+ console.log (result);
+
 // todo:
 // Create a function called 'isOdd' that takes a number as a parameter.
 // The function should use the ternary operator to log a message.
