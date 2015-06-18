@@ -5,14 +5,17 @@
 </head>
 <body>
 	<script type="text/javascript">
-var states = ['Arkansas', 'Colorado', 'Kansas', 'Missuori', 'New Mexico', 'Texas'];
-console.log(states.length);
-for (var i = 0; i < states.length; i++) {
-    console.log('The state that boarders okalahoma index ' + i + ' is: ' + states[i]);
-}
-	states.forEach(function (theName, theNumber) {
-    console.log('The state that boarders okalahoma at index ' + theNumber + ' is: ' + theName);
-});
+	'use strict';
+	(function () {
+		var states = ['Arkansas', 'Colorado', 'Kansas', 'Missuori', 'New Mexico', 'Texas'];
+		console.log(states.length);
+		for (var i = 0; i < states.length; i++) {
+			console.log('The state that boarders okalahoma index ' + i + ' is: ' + states[i]);
+		}
+		states.forEach(function (theName, theNumber) {
+			console.log('The state that boarders okalahoma at index ' + theNumber + ' is: ' + theName);
+		});
+	})();
 	</script>
 </body>
 </html>
