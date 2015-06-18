@@ -7,7 +7,13 @@
 	<script type="text/javascript">
 var names = ['Jacob', 'Joan', 'Jill', 'Jack'];
 console.log(names.length);
-console.log(names);
+for (var i = 0; i < names.length; i++) {
+    console.log('The shape at index ' + i + ' is: ' + names[i]);
+}
+	names.forEach(function (element, index, array) {
+
+    console.log('The shape at index ' + index + ' is: ' + element);
+});
 	</script>
 </body>
 </html>
