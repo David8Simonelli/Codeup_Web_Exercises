@@ -15,13 +15,12 @@ var circle = {
     },
     logInfo: function (round) {
         // todo: complete this method. if round is true, round the result to the nearest integer.
-        if(round === true) {
+        if(round) {
             Math.round(this.area);
             console.log('Area of a circle with radius: ' + this.radius + ', is: ' + Math.round(this.getArea()));
-        }
-        else {
+        } else {
         console.log('Area of a circle with radius: ' + this.radius + ', is: ' + this.getArea());
-         }
+        }
     }
 };
 
