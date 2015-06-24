@@ -9,22 +9,21 @@
   </style>
 </head>
 <body>
-  <!-- div to hold map -->
   <div id="map-canvas"></div>
-
-  <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4UaPjSwHI4M1l1i_-q0_0_Uy3C8-xzf8"></script>
-
-  <!-- Script to show address on map -->
   <script type="text/javascript">
-    // Set our map options
+//   Generate a Google Maps API Key using these instructions: https:developers.google.com/maps/documentation/javascript/tutorial#api_key
+// Create a new file name google_maps_api.html and add the following maps and images to it.
+// Generate a map that shows the city with your favorite restaurant using geocoding.
+// Redraw the map of the above location at zoom levels 5, 15, and 20.
+// Create a marker on your map of the exact location of your favorite restaurant and adjust the zoom to allow for best viewing distance.
+// Create an info window with the name of the restaurant.
+// Zoom in and verify that you have identified the correct location. Double check against maps.google.com
+// Finally, save your work, commit the changes to your git repository, and push to GitHub.
     var mapOptions = {
-      // Set the zoom level
       zoom: 18,
-      // This sets the center of the map at our location
-      center: { lat: 29.4284595, lng: -98.492433 }
+      center: { lat: 29.660160, lng: -98.488777 }
     };
-    // Render the map
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   </script>
 </body>
