@@ -4,7 +4,10 @@
 	<title>Objects</title>
 </head>
 <body>
-<script>
+<script src="/js/jquery.js">
+	$(document).ready(function() {
+    alert( 'The DOM has finished loading!' );
+	});
 var person = new Object();
 person.firstName = "David";
 person.lastName = "Simonelli";
