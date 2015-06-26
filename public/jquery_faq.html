@@ -22,6 +22,27 @@
         <dd class="invisible">9. Crater Lake, the U.S.’ deepest lake and seventh deepest in the world, took 250 years of rain and snow accumulation to reach its current water level.</dd>
         <dd class="invisible">10. The Yellowstone Caldera, in Yellowstone National Park, is a super volcano that is responsible for three of the world’s six biggest volcano eruptions. It is on pace to blow about 100,000 years from now. So come see it while you still can!</dd>
     </dl>
+        <ul>
+            <h3>1. Yellowstone National Park – Wyoming, Montana, Idaho</h3>
+            <li>Fact1</li>
+            <li>Fact2</li>
+            <li>Fact3</li>
+            <li>Fact4</li>
+        </ul>
+        <ul>
+            <h3>2. Acadia National Park – Maine</h3>
+            <li>Fact1</li>
+            <li>Fact2</li>
+            <li>Fact3</li>
+            <li>Fact4</li>
+        </ul>
+        <ul>
+            <h3>3. Yosemite National Park – California</h3>
+            <li>Fact1</li>
+            <li>Fact2</li>
+            <li>Fact3</li>
+            <li>Fact4</li>
+        </ul>
     <a href="#" id="anchor">Click to toggle the invisible text on and off.</a>
     <script src="/js/jquery.js"></script>
     <script>
@@ -32,7 +53,18 @@
                 event.preventDefault();
                 $('dd').toggleClass('invisible');
             });
-        });
+            $('li').each(function(index) {
+                if (index == 0) {
+                    $(this).css('font-weight', 'bold');
+                }
+                if (index == 4) {
+                    $(this).css('font-weight', 'bold');
+                }
+                if (index == 8) {
+                    $(this).css('font-weight', 'bold');
+                }
+            });
+            });
     </script>
 </body>
 </html>
