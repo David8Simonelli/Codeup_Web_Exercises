@@ -2,36 +2,35 @@
 <html>
 <head>
     <title>Konami Code</title>
-    <style type="text/css">
-    </style>
+    <style type="text/css"></style>
 </head>
 <body>
-    <h1>Konami Code up, up, down, down, left, right, left, right, b, a, enter</h1>
- <img id="igm" url='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRgX0NsgLarUpe2D8HS81dtxJQoT1NgPbKh7EEoRaATMuYbXgjgSw'>
-    <script src="/js/jquery.js"></script>
-    <script>
-        "use strict";
-        var keystrokes = [];
-        var konamiKeys = "38,38,40,40,37,39,37,39,66,65,13";
-        var david = [];
-        var davidKeys = "68,65,86,73,68,13";
-        var rightSide = document.getElementById("igm");
-        $(document).keyup(function(e){
-        	console.log(e.keyCode);
-        	keystrokes.push(e.keyCode);
-        	if (keystrokes.toString().indexOf(konamiKeys) >= 0) {
-        		$(this).unbind('keyup');
-        		alert("You added something!")
-        	}
-        });
-           $(document).keyup(function(e){
-        	david.push(e.keyCode);
-                if (david.toString().indexOf(davidKeys) >= 0) {
-                rightSide.setAttribute("url", "http://www.maxistentialism.com/bees/oprahbees.gif" )
-        		$(this).unbind('keyup');
-        		alert("You earned a prize!!")
-        	}
-        });
-    </script>
+<h1>Konami Code up, up, down, down, left, right, left, right, b, a, enter</h1>
+<img id="igm" url='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRgX0NsgLarUpe2D8HS81dtxJQoT1NgPbKh7EEoRaATMuYbXgjgSw'>
+<script src="/js/jquery.js"></script>
+<script>
+    "use strict";
+    var keystrokes = [];
+    var konamiKeys = "38,38,40,40,37,39,37,39,66,65,13";
+    var david = [];
+    var davidKeys = "68,65,86,73,68,13";
+    var rightSide = document.getElementById("igm");
+    $(document).keyup(function(e){
+    	console.log(e.keyCode);
+    	keystrokes.push(e.keyCode);
+    	if (keystrokes.toString().indexOf(konamiKeys) >= 0) {
+    		$(this).unbind('keyup');
+    		alert("You added something!")
+    	}
+    });
+       $(document).keyup(function(e){
+    	david.push(e.keyCode);
+            if (david.toString().indexOf(davidKeys) >= 0) {
+            rightSide.setAttribute("url", "http://www.maxistentialism.com/bees/oprahbees.gif" )
+    		$(this).unbind('keyup');
+    		alert("You earned a prize!!")
+    	}
+    });
+</script>
 </body>
 </html>
