@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css"></style>
+	<title></title>
+</head>
+<body>
+<script src="..js/jquery.js"></script>
+	<script>
+		'use strict';
+		var keystrokes = [];
+		var up = "38"
+			$(document).keyup(function(e){
+	    	console.log(e.keyCode);
+	    	keystrokes.push(e.keyCode);
+		    	if (keystrokes.toString().indexOf(up) >= 0) {
+		    		$(this).unbind('keyup');
+		    		alert("You added something!")
+		    	}
+	   		});
+	</script>
+</body>
+</html>

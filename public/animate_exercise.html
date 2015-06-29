@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animate</title>
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0;
+        }
+
+        #btn-animate {
+            margin: 15px;
+        }
+
+        .box {
+            background-color: #000033;
+            height: 250px;
+            margin: 15px;
+            position: relative;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>
+        <button id="btn-move">Move It</button>
+
+        <button id="btn-scale-down">Scale It</button>
+
+        <button id="btn-disappear">Disappear It</button>
+
+        <button id="btn-show">Show It</button>
+
+        <button id="btn-all">Animate all</button>
+    </p>
+
+    <div id="animate-box" class="box"></div>
+
+    <script src="js/jquery.js"></script>
+    <script>            
+    'use strict';
+        $(document).ready(function() {
+            var speed = 2000;
+            // todo: Move the box by 100 pixels from the left
+                $('#btn-move').click(function() {
+                    console.log("Moving ...");
+                    $('#animate-box').animate({ left: "+=100"}, speed);
+                });                    
+            // todo: Scale the width up by 50%
+                $("#btn-scale-down").click(function() {
+                    console.log("Scaling ...");
+                    $("#animate-box").animate({ width: "+=125"}, speed);
+                });
+            // todo: Use opacity to make the box invisible
+               $("#btn-disappear").click(function() {
+                    console.log("Clearing ...");
+                    $("#animate-box").animate({ opacity: "0"}, speed);
+                });
+            // todo: Make the box appear again with opacity
+            $("#btn-show").click(function() {
+                    console.log("Showing ...");
+                    $("#animate-box").animate({ opacity: "1"}, speed);
+                });
+            // todo: Once all is done see if you can chain all the animations
+            // to happen with the `Animate all` button.
+            $("#btn-all").click(function() {
+                console.log("Doing all ...");
+                $('#animate-box').animate({ left: "+=100"}, speed);
+                $("#animate-box").animate({ width: "+=125"}, speed);
+                $("#animate-box").animate({ opacity: "0"}, speed);
+                $("#animate-box").animate({ opacity: "1"}, speed);
+                });
+            // Refresh to start over before hitting the button.
+        });
+    </script>
+</body>
+</html>

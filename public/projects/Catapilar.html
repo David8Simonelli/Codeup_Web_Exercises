@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+    img {
+        height: 250px;
+        width: 250px;
+        position: relative;
+    }
+    </style>
+    <title>Animate</title>
+</head>
+<body>
+    <p>
+        <button id="btn-right">Move Right</button>
+        <button id="btn-left">Move Left</button>
+        <button id="btn-down">Move Down</button>
+        <button id="btn-up">Move Up</button>
+        <button id="btn-wiggle">Wiggle</button>
+        <button id="btn-all">Animate all</button>
+    </p>
+    <img src="/img/catapillar.jpg" id="animate"></img>
+    <script src="/js/jquery.js"></script>
+    <script>
+    'use strict';
+    $(document).ready(function() {
+        var speed = 1000;
+        // todo: Move the box by 100 pixels from the left
+        $('#btn-right').click(function() {
+            $('#animate').animate({ width: "+=100"}, speed);
+            $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        });                    
+    // todo: Use opacity to make the box invisible
+    $("#btn-left").click(function() {
+        $('#animate').animate({ width: "+=100", left: "-=100"}, speed);
+        $('#animate').animate({ width: "-=100",}, speed);
+    });
+    // todo: Scale the width up by 50%
+    $("#btn-down").click(function() {
+        $('#animate').animate({ height: "+=100"}, speed);
+        $('#animate').animate({ height: "-=100", top: "+=100"}, speed);
+    });
+    // todo: Make the box appear again with opacity
+    $("#btn-up").click(function() {
+        $('#animate').animate({ height: "+=100", top: "-=100"}, speed);
+        $('#animate').animate({ height: "-=100"}, speed);
+    });
+    $("#btn-wiggle").click(function() {
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+    });
+    // todo: Once all is done see if you can chain all the animations
+    // to happen with the `Animate all` button.
+    $("#btn-all").click(function() {
+        $('#animate').animate({ width: "+=100"}, speed);
+        $('#animate').animate({ width: "-=100", left: "+=100"}, speed);
+        $('#animate').animate({ height: "+=100"}, speed);
+        $('#animate').animate({ height: "-=100", top: "+=100"}, speed);        
+        $('#animate').animate({ width: "+=100", left: "-=100"}, speed);
+        $('#animate').animate({ width: "-=100",}, speed);
+        $('#animate').animate({ height: "+=100", top: "-=100"}, speed);
+        $('#animate').animate({ height: "-=100"}, speed);
+    });
+    // Refresh to start over before hitting the button.
+});
+</script>
+</body>
+</html>
