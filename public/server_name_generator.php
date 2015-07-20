@@ -1,8 +1,12 @@
 <?php
-$adjective = ['Gloomy', 'Angry', 'Happy', 'Stupid', 'Hypnotic', 'Demonic', 'Childish', 'Careless', 'Wild', 'Adorable'];
-$noun = ['Jail', 'StepDad', 'Baby', 'Rainbow', 'Riverbed', 'Heart', 'Harbor', 'Opera', 'Tree', 'Pest'];
-$ranNoun = $noun[rand(0,count($noun) - 1)];
-$ranAdjective = $adjective[rand(0,count($adjective) - 1)];
+function pageController() {
+	$adjective = ['Gloomy', 'Angry', 'Impaled', 'Stupid', 'Hypnotic', 'Demonic', 'Childish', 'Careless', 'Wild', 'Edible'];
+	$noun = ['Jail', 'StepDad', 'Baby', 'Rainbow', 'Riverbed', 'Heart', 'Harbor', 'Opera', 'Tree'];
+    $data = array();
+    $data['message'] = $adjective[rand(0,count($adjective) - 1)] . " " . $noun[rand(0,count($noun) - 1)];
+    return $data;    
+}
+extract(pageController());
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,6 +25,6 @@ $ranAdjective = $adjective[rand(0,count($adjective) - 1)];
 	<title>Name Generator</title>
 </head>
 <body>
-	<h1><?php echo "The " . $ranAdjective . ' ' . $ranNoun; ?></h1>
+	<h1><?= "The " . $message; ?></h1>
 </body>
 </html>

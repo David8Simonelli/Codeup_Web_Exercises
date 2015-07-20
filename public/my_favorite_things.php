@@ -1,5 +1,5 @@
 <?php
-$favorite = ['Snow Cones', 'Squirrels', 'Not Sleeping', 'Trail Mix', 'Dogs']
+	$favorite = ['Snow Cones', 'Squirrels', 'Not Sleeping', 'Trail Mix', 'Dogs'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,13 +23,13 @@ $favorite = ['Snow Cones', 'Squirrels', 'Not Sleeping', 'Trail Mix', 'Dogs']
 <body>
 	<h1 class="text">My Favorite Things</h1>
 	<ol>
-		<?php foreach ($favorite as $key => $value) {
-			if($key % 2 == 1) { ?>
-			<li id='other' class ='text'><?php echo $value; ?></li>
-			<?php } else { ?>
-			<li class='text'><?php echo $value; ?></li>
-			<?php } 
-		} ?>
+		<?php foreach ($favorite as $key => $value):
+			if($key % 2 == 1): ?>
+			<li id='other' class ='text'><?= $value; ?></li>
+			<?php else: ?>
+			<li class='text'><?= $value; ?></li>
+			<?php endif;
+		endforeach ?>
 	</ol>
 </body>
 </html>
