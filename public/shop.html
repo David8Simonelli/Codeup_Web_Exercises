@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style src="css/bootstrap.css">
+    </style>
+    <title>Online Store</title>
+</head>
+<body>
+<h1>My Tool Store</h1>
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button type="button" class="btn btn-primary btn-lg" id="btn-Refresh" >Refresh</button>
+<script src="/js/jquery.js"></script>
+<script>
+    'use strict';
+    (function() {
+        function update() {
+        var request = $.get('/data/inventory.json');
+        request.always(function() {
+            console.log("Working ...");
+        });
+        request.fail(function(element, failure) {
+            console.log("The Website has failed to load.");
+        });
+        request.done(function(info) {
+            var string = '';
+            for (var i = 0; i < info.length; i++) {
+                string += '<tr><td>' + info[i].title + '</td><td>' + info[i].quantity + "</td><td>"  + info[i].price + '</td><td>' + info[i].categories + '</td></tr>';
+            }
+            $("#insertProducts").html(string);
+        });
+        $(document).keyup(function(e){
+            console.log(e.keyCode);
+            keystrokes.push(e.keyCode);
+            if (keystrokes.toString().indexOf(konamiKeys) >= 0) {
+                $(this).unbind('keyup');
+                $("form").toggleClass("invisible");
+                alert("You added something!")
+            }
+        var keystrokes = [];
+        var konamiKeys = "38,38,40,40,37,39,37,39,66,65,13";
+        $(document).keyup(function(e){
+            console.log(e.keyCode);
+            keystrokes.push(e.keyCode);
+            if (keystrokes.toString().indexOf(konamiKeys) >= 0) {
+                $(this).unbind('keyup');
+                $("form").toggleClass("invisible");
+                alert("You added something!")
+            }
+
+        $("#btn-Refresh").click(function() {
+            update();
+        });
+    })();
+</script>
+</body>
+</html>

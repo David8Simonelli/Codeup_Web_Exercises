@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+.absolutly {
+	position: absolute;
+}
+#btn-show {
+	position: absolute;
+	background-color: yellow;
+}
+#background {
+	border: 5px;
+	border-style: solid;
+	border-radius: 20px;
+	border-color: black;
+	height: 600px;
+	width: 600px;
+	background-color: white;
+}
+#blue {
+	border: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: darkblue;
+	height: 275px;
+	width: 275px;
+	background-color: blue;
+	left: 320px;
+	top: 320px;
+}
+#red {
+	border: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: darkred;
+	height: 275px;
+	width: 275px;
+	background-color: red;
+	left: 20px;
+	top: 20px;
+}
+#purple {
+	border: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: black;
+	height: 275px;
+	width: 275px;
+	background-color: purple;
+	left: 320px;
+	top: 20px;
+}
+#green {
+	border: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: darkgreen;
+	height: 275px;
+	width: 275px;
+	background-color: green;
+	left: 20px;
+	top: 320px;
+}
+	</style>
+</head>
+<body>
+<div class="absolutly" id="background"></div>
+<div class="absolutly" id="blue"></div>
+<div class="absolutly" id="red"></div>
+<div class="absolutly" id="purple"></div>
+<div class="absolutly" id="green"></div>
+<button id="btn-show">Change Color Scheme</button>
+<script src="/js/jquery.js"></script>
+<script type="text/javascript">
+	function getRandomColor() {
+	    var letters = '0123456789ABCDEF'.split('');
+	    var color = '#';
+	    for (var i = 0; i < 6; i++ ) {
+	        color += letters[Math.floor(Math.random() * 16)];
+	    }
+	    return color;
+	}
+	// function getRandomColorScheme() {
+	// 	var mySchemes = [ 'red', 'yellow', 'blue', 'green']
+	// 	var rand = mySchemes[Math.floor(Math.random() * mySchemes.length)];
+	// 	var mySchemes = rand
+	// 	if(rand = 'red') {
+	// 		$("#background").css("background-color", 'red');
+ //        	$("#background").css("border-color", 'red');
+ //        	console.log(rand);
+	// 	}
+	// 	else if(rand = 'blue') {
+	// 		$("#background").css("background-color", 'blue');
+ //        	$("#background").css("border-color", 'blue');	
+	// 	}
+	// 	else if(rand = 'yellow') {
+	// 		$("#background").css("background-color", 'yellow');
+ //        	$("#background").css("border-color", 'yellow');	
+	// 	}
+	// 	else if(rand = 'green') {
+	// 		$("#background").css("background-color", 'green');
+ //        	$("#background").css("border-color", 'green');	
+	// 	}
+	// 	else {
+	// 		$("#background").css("background-color", 'black');
+ //        	$("#background").css("border-color", 'black');	
+	// 	}
+	// }
+	$("#btn-show").click(function() {
+        $("#blue").css("background-color", getRandomColor());
+        $("#blue").css("border-color", getRandomColor());
+        $("#red").css("background-color", getRandomColor());
+        $("#red").css("border-color", getRandomColor());
+        $("#purple").css("background-color", getRandomColor());
+        $("#purple").css("border-color", getRandomColor());
+        $("#green").css("background-color", getRandomColor());
+        $("#green").css("border-color", getRandomColor());
+        $("#background").css("background-color", getRandomColor());
+        $("#background").css("border-color", getRandomColor());
+    });
+</script>
+</body>
+</html>

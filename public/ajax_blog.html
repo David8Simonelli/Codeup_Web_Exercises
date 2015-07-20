@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title> 
+	<style src="css/bootstrap-theme.css">
+	body {
+		background-color: black;
+		color: salmon;
+		margin-top: 0px;
+	}
+	.invisible {
+		display: none;
+	}
+	#categoriesForm {
+		width: 300px;	
+	}
+	h2 {
+		background-color: ;
+		color: salmon;
+	}
+	#contentForm {
+		width: 250px;
+		height: 75px;
+	}
+	h1 {
+		position: fixed;
+		background-color: black;
+		color: salmon;
+		padding left: 25px;
+		padding right: 25px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		margin-top: 0px;
+		border-color: salmon;
+		border: 3px;
+		border-color: solid;
+	}
+	#h11 {
+		margin-left: 200px;
+	}
+	#btn-salm {
+		background-color: salmon;
+	}
+	#posts {
+		margin-top: 70px;
+	}
+	#topB {
+		width: 2000px;
+		height: 70px;
+		background-color: black;
+		position: fixed;
+	}
+	#h12 {
+		margin-left: 400px;
+	}
+	#h10 {
+		margin-left: 600px;
+	}
+	</style>
+-->
+</head>
+<body>
+	<div id="topB"></div>
+	<h1 id="h10">|Blog|</h1>
+	<h1 id="h11">|About Me|</h1>
+	<h1 id="h12">|Contact|</h1>
+	<br>
+	<div id="posts"></div>
+	<div id="added"></div>
+	<button type="button" id="btn-Refresh" >Refresh</button>
+	<button type="button" id="btn-Delete" >Delete First Post</button>
+	<p>
+		<form class="invisible" action="action_page.php">
+			Title:<br>
+			<input id="titleForm" type="text" name="title" value="">
+			<br>
+			Content:
+			<br>
+			<textarea id="contentForm" name="content" value="test"></textarea>
+			<br>
+			Categories:
+			<br>
+			<input id="categoriesForm" type="text" name="categories" value="">
+			<br><br>	
+			<button type="button" id="btn-Create" >Create New Post</button>
+		</form>
+	</p>
+	<script src="/js/jquery.js"></script>
+<script>
+    'use strict';
+    (function() {	        
+    	function update() {
+    		var request = $.get('/data/blog.json');
+	        request.always(function() {
+	            console.log("Working ...");
+	        });
+	        request.fail(function(element, failure) {
+	            console.log("The Website has failed to load." + failure);
+	        });
+	        request.done(function(info) {
+	            var string = '';
+	            for (var i = 0; i < info.length; i++) {
+	                string += "<h2>" + info[i].title + "</h2><p>" + info[i].content + "</p><p> Categories: " + info[i].categories + "</p><p> Date: " + info[i].date + "</p>" ;            
+	            }
+	            $("#posts").html(string);
+        	});
+	    };
+	    function addPost() {
+    		var request = $.get('/data/blog.json');
+	        request.always(function() {
+	            console.log("Working ...");
+	        });
+	        request.fail(function(element, failure) {
+	            console.log("The Website has failed to load." + failure);
+	        });
+	        request.done(function(post) {
+	            var string2 = '';
+	            for (var i = 0; i < post.length; i++) {
+	                string2 += "<h2>" + post[i].title2 + "</h2><p>" + post[i].content2 + "</p><p> Categories: " + post[i].categories2 + "</p>" ;            
+	            }
+	            $("#added").html(string2);
+        	});
+	    };
+	    update();
+		$("#btn-Refresh").click(function() {
+        	update();
+    	});
+    	$("#btn-Create").click(function() {
+    		var title2 = $('#titleForm').val();
+    		console.log(title2);
+    		var categories2 = $('#categoriesForm').val() + "<p> Date: Just Now. <p>";
+    		console.log(categories2);
+    		var content2 = $('#contentForm').val();
+    		console.log(content2);
+
+    		var post = { title2, categories2, content2};
+    		addPost();
+    	})
+	    $("#btn-Delete").click(function() {
+    		request = info.shift();
+    		console.log("working")
+		});
+    	var keystrokes = [];
+        var konamiKeys = "38,38,40,40,37,39,37,39,66,65,13";
+        $(document).keyup(function(e){
+        	console.log(e.keyCode);
+        	keystrokes.push(e.keyCode);
+        	if (keystrokes.toString().indexOf(konamiKeys) >= 0) {
+        		$(this).unbind('keyup');
+        		$("form").toggleClass("invisible");
+        	}
+        });
+    })();
+</script>
+</body>
+</html>
