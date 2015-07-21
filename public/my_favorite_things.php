@@ -1,5 +1,10 @@
 <?php
-	$favorite = ['Snow Cones', 'Squirrels', 'Not Sleeping', 'Trail Mix', 'Dogs'];
+	function pageController() {
+		$data = [];
+		$data['favorite'] = ['Snow Cones', 'Squirrels', 'Not Sleeping', 'Trail Mix', 'Dogs'];
+		return $data;
+	}
+	extract(pageController());
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,6 +24,8 @@
 		background-image: url(http://www.zingerbugimages.com/backgrounds/sky_blue_flame_fractal_background_seamless.jpg);
 	}
 	</style>
+	<title>My Favorite Things</title>
+	<link href="http://www.zingerbugimages.com/backgrounds/sky_blue_flame_fractal_background_seamless.jpg"/>
 </head>
 <body>
 	<h1 class="text">My Favorite Things</h1>
