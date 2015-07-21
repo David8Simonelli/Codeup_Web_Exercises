@@ -1,0 +1,11 @@
+body {
+	font-size: 50px;
+	color: white;
+	text-align: center;
+	background-image: url(http://silviahartmann.com/background-tile-art/images/black_water_tile.jpg);
+	background-size: 250px;
+}
+#kill {
+	color: white;
+	text-decoration: underline;
+}

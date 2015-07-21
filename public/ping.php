@@ -1,44 +1,44 @@
 <?php
 function pageController() {
 	$data = [];
-	$luck = rand(0, 10);
-	if(isset($_GET['count']) && $luck >= 5) { 
-		$_GET['count']++;
-		$data['count'] = $_GET['count'];
-		$_GET['oper'] = 'Hit!';
-		$data['oper'] = $_GET['oper'];
+	$luck = rand(0, 1);
+	if(isset($_GET['oper'])) {
+		if(isset($_GET['count']) && $luck == 1) { 
+			$_GET['count']++;
+			$data['count'] = $_GET['count'];
+			$_GET['oper'] = 'Hit!';
+			$data['oper'] = $_GET['oper'];
+		} else {
+			$_GET['count'] = 0;
+			$data['count'] = $_GET['count'];
+			$_GET['oper'] = 'Miss!';
+			$data['oper'] = $_GET['oper'];
+		}
 	} else {
 		$_GET['count'] = 0;
 		$data['count'] = $_GET['count'];
-		$_GET['oper'] = 'Miss!';
+		$_GET['oper'] = 'Press Roll to Start.';
 		$data['oper'] = $_GET['oper'];
+		$_GET['round'] = 0;
+		$data['round'] = $_GET['round'];
 	}
-	return $data;    
+	$_GET['round']++;
+	$data['round'] = $_GET['round'];
+	return $data;     
 }
 extract(pageController());
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<style type="text/css">
-	body {
-		color: black;
-		font-size: 75px;
-		text-decoration: underline;
-		text-align: center;
-		background-image: url(http://us.cdn1.123rf.com/168nwm/karenr/karenr1505/karenr150500021/39795955-teal-and-white-yin-yang-tile-pattern-repeat-background-that-is-seamless-and-repeats.jpg);
-		background-size: 250px;
-	}
-	#kill {
-		color: black;
-	}
-	</style>
+	<link rel="stylesheet" type="text/css" href="/css/ping.css">
 	<title>Counter</title>
 	<link href="http://1-background.com/images/ultraviolet/ultraviolet-fractal-seamless-background.jpg" />
 </head>
 <body>
-	<a class='text' id='kill' href="http://codeup.dev/pong.php?oper=add&count=<?= $count; ?>">Roll!</a>
-	<h2 class='text'><?= $count; ?></h2>
-	<h3 class='text'><?= $oper; ?></h3>
+	<a id='kill' href="http://codeup.dev/pong.php?oper=add&count=<?= $count; ?>&round=<?= $round; ?>">Roll!</a>
+	<h1>Score: <?= $count; ?></h1>
+	<h3><?= $oper; ?></h3>
+	<h6>Rounds: <?= $round; ?></h6>
 </body>
 </html>

@@ -2,43 +2,43 @@
 function pageController() {
 	$data = [];
 	$luck = rand(0, 1);
-	if(isset($_GET['count']) && $luck == 1) { 
-		$_GET['count']++;
-		$data['count'] = $_GET['count'];
-		$_GET['oper'] = 'Hit!';
-		$data['oper'] = $_GET['oper'];
+	if(isset($_GET['oper'])) {
+		if(isset($_GET['count']) && $luck == 1) { 
+			$_GET['count']++;
+			$data['count'] = $_GET['count'];
+			$_GET['oper'] = 'Hit!';
+			$data['oper'] = $_GET['oper'];
+		} else {
+			$_GET['count'] = 0;
+			$data['count'] = $_GET['count'];
+			$_GET['oper'] = 'Miss!';
+			$data['oper'] = $_GET['oper'];
+		}
 	} else {
 		$_GET['count'] = 0;
 		$data['count'] = $_GET['count'];
-		$_GET['oper'] = 'Miss!';
+		$_GET['oper'] = 'Press Roll to Start.';
 		$data['oper'] = $_GET['oper'];
+		$_GET['round'] = 0;
+		$data['round'] = $_GET['round'];
 	}
-	return $data;    
+	$_GET['round']++;
+	$data['round'] = $_GET['round'];
+	return $data;     
 }
 extract(pageController());
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<style type="text/css">
-	body {
-		font-size: 75px;
-		color: white;
-		text-decoration: underline;
-		text-align: center;
-		background-image: url(http://thumbs.dreamstime.com/m/yin-yang-shapes-seamless-generated-background-texture-44159898.jpg);
-		background-size: 250px;
-	}
-	#kill {
-		color: white;
-	}
-	</style>
 	<title>Counter</title>
+	<link rel="stylesheet" type="text/css" href="/css/pong.css">
 	<link href="http://1-background.com/images/ultraviolet/ultraviolet-fractal-seamless-background.jpg" />
 </head>
 <body>
-	<a class='text' id='kill' href="http://codeup.dev/ping.php?oper=add&count=<?= $count; ?>">Roll!</a>
-	<h2 class='text'><?= $count; ?></h2>
-	<h3 class='text'><?= $oper; ?></h3>
+	<a id='kill' href="http://codeup.dev/ping.php?oper=add&count=<?= $count; ?>&round=<?= $round; ?>">Roll!</a>
+	<h1>Score: <?= $count; ?></h1>
+	<h3><?= $oper; ?></h3>
+	<h6>Rounds: <?= $round; ?></h6>
 </body>
 </html>
