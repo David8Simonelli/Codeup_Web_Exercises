@@ -2,10 +2,7 @@ body {
 	color: black;
 	font-size: 50px;
 	text-align: center;
-	<?php if($rounds == 666) { ?>
-	<php } else { ?>
-	<?php echo "background-image: url(http://www.designbolts.com/wp-content/uploads/2013/02/Grunge-Seamless-Pattern-For-Website-Background.jpg);";
-	<php } ?>
+	background-image: url(http://www.designbolts.com/wp-content/uploads/2013/02/Grunge-Seamless-Pattern-For-Website-Background.jpg);";
 	background-size: 250px;
 }
 #kill {

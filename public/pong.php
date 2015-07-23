@@ -19,7 +19,7 @@ function pageController() {
 		$data['count'] = $_GET['count'];
 		$_GET['oper'] = 'Press Roll to Start.';
 		$data['oper'] = $_GET['oper'];
-		$_GET['round'] = 0;
+		$_GET['round'] = -1;
 		$data['round'] = $_GET['round'];
 	}
 	$_GET['round']++;
@@ -31,9 +31,9 @@ extract(pageController());
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Counter</title>
+	<title>Pong</title>
 	<link rel="stylesheet" type="text/css" href="/css/pong.css">
-	<link href="http://1-background.com/images/ultraviolet/ultraviolet-fractal-seamless-background.jpg" />
+	<link rel="icon" href="/img/favicon.gif"/>
 </head>
 <body>
 	<a id='kill' href="http://codeup.dev/ping.php?oper=add&count=<?= $count; ?>&round=<?= $round; ?>">Roll!</a>

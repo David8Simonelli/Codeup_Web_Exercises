@@ -1,0 +1,39 @@
+ body {
+ 	background-image: url(/img/home.jpg);
+ 	background-color: black;
+ 	font-family: "Impact", Charcoal, sans-serif;
+ 	color: white;
+ }
+ li {
+ 	list-style-type: square;
+ }
+ a {
+ 	color: black;
+ }
+ a:hover {
+ 	color: darkorange;
+ }
+ #sidebar {
+ 	background-image: url(/img/home.jpg);
+ 	background-color: black;
+ 	background-color: grey;
+ 	position: fixed;
+ 	width: 98%;
+ 	height: 10%;
+ 	border-radius: 20px;
+ 	border-style: solid;
+ 	border-color: gold;
+ }
+ #space {
+ 	height: 80px;
+ 	width: auto;
+ 	position: relative;
+ }
+ footer {
+ 	background-image: url(/img/home.jpg);
+ 	background-color: black;
+ 	background-color: #777;
+ 	border-radius: 20px;
+ 	border-style: solid;
+ 	border-color: gold;
+ }
