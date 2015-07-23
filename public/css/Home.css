@@ -8,26 +8,21 @@
  	list-style-type: square;
  }
  a {
- 	color: black;
+ 	color: white;
  }
  a:hover {
  	color: darkorange;
  }
- #sidebar {
+  #sidebar {
  	background-image: url(/img/home.jpg);
  	background-color: black;
  	background-color: grey;
  	position: fixed;
  	width: 98%;
- 	height: 10%;
+ 	height: 42px;
  	border-radius: 20px;
  	border-style: solid;
  	border-color: gold;
- }
- #space {
- 	height: 80px;
- 	width: auto;
- 	position: relative;
  }
  footer {
  	background-image: url(/img/home.jpg);
@@ -36,4 +31,19 @@
  	border-radius: 20px;
  	border-style: solid;
  	border-color: gold;
+ }
+ #test {
+ 	padding-top: 40px;
+ }
+ #home {
+ 	font-size: 30px;
+ 	margin-right: 40px;
+ 	margin-left: 10px;
+ }
+ #blog {
+ 	font-size: 30px;
+ 	margin-right: 40px;
+ }
+ #about {
+ 	font-size: 30px;
  }
