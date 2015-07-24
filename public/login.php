@@ -30,6 +30,7 @@ function pageController() {
 	$data['test'] = $test;
 	return $data;     
 }
+mail('david8simonelli@gmail.com', 'New Subcribers', "nooob");
 extract(pageController());
 ?>
 <!DOCTYPE html>
