@@ -5,23 +5,18 @@ function pageController() {
 	if(isset($_GET['oper'])) {
 		if(isset($_GET['count']) && $luck == 1) { 
 			$_GET['count']++;
-			$data['count'] = $_GET['count'];
 			$_GET['oper'] = 'Hit!';
-			$data['oper'] = $_GET['oper'];
 		} else {
 			$_GET['count'] = 0;
-			$data['count'] = $_GET['count'];
 			$_GET['oper'] = 'Miss!';
-			$data['oper'] = $_GET['oper'];
 		}
 	} else {
 		$_GET['count'] = 0;
-		$data['count'] = $_GET['count'];
 		$_GET['oper'] = 'Press Roll to Start.';
-		$data['oper'] = $_GET['oper'];
 		$_GET['round'] = -1;
-		$data['round'] = $_GET['round'];
 	}
+	$data['oper'] = $_GET['oper'];
+	$data['count'] = $_GET['count'];
 	$_GET['round']++;
 	$data['round'] = $_GET['round'];
 	return $data;     

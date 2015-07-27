@@ -1,5 +1,4 @@
 <?php
-var_dump($_REQUEST);
 function inputHas($key) {
 	if(empty($_REQUEST[$key])) {
 		return false;

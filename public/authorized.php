@@ -1,11 +1,12 @@
 <?php
 session_start();
+require_once('../auth.php');
 function pageController() {
 	$data = [];
 	if (!empty($_SESSION['status']) && $_SESSION['status'] == 'loggedin') {
 		$data['user'] = 'Welcome ' . ucfirst($_SESSION['user']);
 	} else {
-		$data['user'] = 'Please Log In';
+		auth::logout();
 	}
 	return $data;
 }
@@ -19,7 +20,9 @@ extract(pageController());
 </head>
 <body>
 	<h1>Authorized</h1>
-	<h2><?= $user ?></h2>
+	<h2><?php if(isset($user)) {
+		echo $user;
+	} ?></h2>
 	<a href="http://codeup.dev/logout.php">LogOut</a>
 </body>
 </html>

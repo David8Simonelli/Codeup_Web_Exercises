@@ -1,9 +1,7 @@
 <?php
 session_start();
-$data = [];
-session_destroy();
-header("location: http://codeup.dev/login.php");
-exit();
+require_once'../auth.php';
+auth::logout();
 ?>
 <!DOCTYPE html>
 <html>

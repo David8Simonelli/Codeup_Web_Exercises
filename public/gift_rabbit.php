@@ -31,7 +31,7 @@ extract(pageController());
     </form>
     <?php foreach ($items as $key => $value) { ?>
     <ul>
-    	<li><?= $value[0] ?></li>
+    	<li>Gift for <?= $value[0] ?></li>
     	<a href="http://codeup.dev/gift_list.php?which=<?= $key ?>">Number = <?= $key + 1 . PHP_EOL; ?></a>
     </ul>
     <?php } ?>

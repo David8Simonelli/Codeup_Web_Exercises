@@ -1,5 +1,6 @@
 <?php
 function pageController() {
+	require_once('input.php');
 	$data = [];
 	$luck = rand(0, 1);
 	if(isset($_GET['oper'])) {

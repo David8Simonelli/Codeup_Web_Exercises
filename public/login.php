@@ -1,6 +1,7 @@
 <?php 
 session_start();
-include 'functions.php';
+require_once'../auth.php';
+require_once'functions.php';
 function pageController() {
 	$data = [];
 	if (!empty($_SESSION['status']) && $_SESSION['status'] == 'loggedin') {
@@ -9,28 +10,20 @@ function pageController() {
 	}
 	if (empty($_POST['search'])) {
 		if(empty($_POST['username']) || empty($_POST['password']) || is_numeric($_POST['password']) || is_numeric($_POST['username'])) {
-			$test = " Please enter a Valid user name and Password.";
+			$fail = " Please enter a Valid user name and Password.";
 		} else {
 			$password = $_POST['password'];
 			$user = $_POST['username'];
-			if (escape($user) == "david" && escape($password) == "simonelli") {
-				$test = " Correct";
-				$_SESSION['status'] = "loggedin";
-				$_SESSION['user'] = trim($_POST['username']);
-				header("location: http://codeup.dev/authorized.php");
-				exit();
-			} else {
-				$test = " Invalid Username or password";
-			}
+			auth::attempt(escape($user), escape($password));
 		}
 	} else {
 		$search = escape($_POST['search']);
 		header("location: https://duckduckgo.com/?q=$search");
+		exit();
 	}
-	$data['test'] = $test;
+	$data['fail'] = " Please enter a Valid user name and Password.";
 	return $data;     
 }
-mail('david8simonelli@gmail.com', 'New Subcribers', "nooob");
 extract(pageController());
 ?>
 <!DOCTYPE html>
@@ -41,7 +34,7 @@ extract(pageController());
 	<link rel="icon" href="/img/favicon.ico"/>
 </head>
 <body>
-	<h1><?= $test ?></h1>
+	<h1><?= $fail ?></h1>
 	<form method="POST">
 	    <label>Search</label>
         <input type="text" name="search"><br>

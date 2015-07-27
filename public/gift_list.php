@@ -5,7 +5,7 @@ function pageController() {
     $data['items'] = $_SESSION['items'];
     if(empty($_POST['name']) || empty($_POST['gift']) || empty($_SESSION['items'])) {
     }
-	return $data;     
+    return $data;     
 }
 extract(pageController());
 ?>
@@ -18,14 +18,15 @@ extract(pageController());
 </head>
 <body>
     <h1>Gift List</h1>
-    <?php foreach ($items as $key => $value) { ?>
-    <ul>Number = <?= $key + 1 . PHP_EOL;; ?>
-        <?php 
-    </ul>
-    <?php } ?>
-    <form method="POST">
-        <a href="http://codeup.dev/gift_rabbit.php">Enter Another Gift</a>
-        <a href="http://codeup.dev/rabbit_reset.php">Reset</a>
-    </form>
+    <?php foreach ($items as $key => $value) {
+            if($_GET['which'] == $key) { ?>
+            <ul>
+                <li>Person = <?= $value[0] . PHP_EOL; ?><li>
+                <li>Gift = <?= $value[1] . PHP_EOL; ?><li>
+            </ul>
+            <?php } 
+    } ?>
+    <a href="http://codeup.dev/gift_rabbit.php">Enter Another Gift</a>
+    <a href="http://codeup.dev/rabbit_reset.php">Reset</a>
 </body>
 </html>
