@@ -4,28 +4,29 @@ define('DB_NAME', 'park_db');
 define('DB_USER', 'parks_user');
 define('DB_PASS', 'password');
 require_once "../db_connect.php";
+require_once "input.php";
 $fail = '';
 $dbc->exec("USE park_db"); 
 $count = $dbc->query('SELECT count(*) FROM national_parks')->fetchColumn();
-if (!empty($_POST['name']) && !empty($_POST['location']) && !empty($_POST['date_established']) && !empty($_POST['area_in_acres']) && !empty($_POST['description'])) {
-	if (is_string($_POST['name']) && is_string($_POST['location']) && is_numeric($_POST['area_in_acres']) && is_string($_POST['description']) )  {
+if (!empty($_POST['name']) && !empty($_POST['location']) && !empty($_POST['date_established']) && !empty($_POST['area_in_acres']) && !empty($_POST['description'])) {		
+	try {
 		$stmt = $dbc->prepare('INSERT INTO national_parks (id, name, location, date_established, area_in_acres, description) VALUES (:id, :name, :location, :date_established, :area_in_acres, :description)');
-		$stmt->bindValue(':id', $count + 1, PDO::PARAM_INT);
-		$stmt->bindValue(':name',  $_POST['name'],  PDO::PARAM_STR);
-		$stmt->bindValue(':location',  $_POST['location'],  PDO::PARAM_STR);
-		$stmt->bindValue(':date_established',  $_POST['date_established'],  PDO::PARAM_INT);
-		$stmt->bindValue(':area_in_acres',  $_POST['area_in_acres'],  PDO::PARAM_INT);
-		$stmt->bindValue(':description',  $_POST['description'],  PDO::PARAM_STR);
+		$stmt->bindValue(':id', Input::getNumber($count + 1), PDO::PARAM_INT);
+		$stmt->bindValue(':name',  Input::getString($_POST['name']),  PDO::PARAM_STR);
+		$stmt->bindValue(':location',  Input::getString($_POST['location']),  PDO::PARAM_STR);
+		$stmt->bindValue(':date_established',  Input::getDate($_POST['date_established']),  PDO::PARAM_INT);
+		$stmt->bindValue(':area_in_acres', Input::getNumber($_POST['area_in_acres']),  PDO::PARAM_INT);
+		$stmt->bindValue(':description',  Input::getString($_POST['description']),  PDO::PARAM_STR);
 		$stmt->execute();
 		$ip = $dbc->prepare('INSERT INTO users_ip (ip, name) VALUES (:ip, :name)');
 		$ip->bindValue(':ip', strval($_SERVER['REMOTE_ADDR']), PDO::PARAM_STR);
 		$ip->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
 		$ip->execute();
-	} else {
-		$fail = 'stop it';
+	} catch (Exception $e) {
+	    echo 'An error occurred: ' . $e->getMessage() . PHP_EOL;
 	}
-} 
-$increment = 4;
+}
+$increment = Input::getNumber(4);
 if (isset($_GET['page']) && $_GET['page'] < $count - $increment && $_GET['page'] >= 1) {
 	$number = $_GET['page'];
 } else {
@@ -94,6 +95,7 @@ $stmt->execute();
 </head>
 <body>
 	<h1>National Parks</h1>
+	<h1><?php echo Input::checkErrors(); ?></h1>
 	<table>
 		<tr>
 			<?php

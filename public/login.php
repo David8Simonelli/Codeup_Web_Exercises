@@ -1,26 +1,21 @@
 <?php 
 session_start();
-require_once'../auth.php';
-require_once'functions.php';
+require_once'../utils/auth.php';
+require_once'../utils/functions.php';
 function pageController() {
 	$data = [];
 	if (!empty($_SESSION['status']) && $_SESSION['status'] == 'loggedin') {
 		header("location: http://codeup.dev/authorized.php");
 		exit();
 	}
-	if (empty($_POST['search'])) {
-		if(empty($_POST['username']) || empty($_POST['password']) || is_numeric($_POST['password']) || is_numeric($_POST['username'])) {
-			$fail = " Please enter a Valid user name and Password.";
-		} else {
-			$password = $_POST['password'];
-			$user = $_POST['username'];
-			auth::attempt(escape($user), escape($password));
-		}
+	if(empty($_POST['username']) || empty($_POST['password']) || is_numeric($_POST['password']) || is_numeric($_POST['username'])) {
+		$fail = " Please enter a Valid user name and Password.";
 	} else {
-		$search = escape($_POST['search']);
-		header("location: https://duckduckgo.com/?q=$search");
-		exit();
+		$password = $_POST['password'];
+		$user = $_POST['username'];
+		auth::attempt(escape($user), escape($password));
 	}
+	exit();
 	$data['fail'] = " Please enter a Valid user name and Password.";
 	return $data;     
 }

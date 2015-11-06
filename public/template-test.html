@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Testing</title>
+</head>
+<body ng-app="glacierAngular">
+
+<h1>{{ "Hello Glacier" | uppercase }}</h1>
+
+
+<ul>
+    <li ng-repeat="num in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" ng-if="num % 3 != 0">
+        {{ num }} is not 3/6/9!
+    </li>
+</ul>
+
+<script type="text/javascript" src="/js/angular.min.js"></script>
+<script type="text/javascript" src="/js/glacierAngular.js"></script>
+</body>
+</html>

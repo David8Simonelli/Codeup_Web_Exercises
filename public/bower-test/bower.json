@@ -1,0 +1,17 @@
+{
+  "name": "Some App",
+  "version": "0.1.0",
+  "homepage": "https://github.com/David8Simonelli/Codeup_Web_Exercises",
+  "authors": [
+    "David Simonelli <david8simonelli@gmail.com>"
+  ],
+  "description": "I'm testin stuff",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

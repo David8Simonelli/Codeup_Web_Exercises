@@ -1,0 +1,133 @@
+<html>
+<head>
+	<title>Testerino</title>
+	<style type="text/css">
+	.box {
+		position: absolute;
+		height: 20%;
+		width: 60%;
+	}
+	.black {
+		background-color: black;
+		top: 0%;
+		left: 0%;
+	}
+	.grey {
+		background-color: grey;
+		top: 20%;
+		left: 10%;
+	}
+	.green {
+		background-color: green;
+		top: 40%;
+		left: 20%;
+	}
+	.yellow {
+		background-color: yellow;
+		top: 60%;
+		left: 30%;
+	}
+	.orange {
+		background-color: orange;
+		top: 80%;
+		left: 40%;
+	}
+	.red {
+		background-color: red;
+		top: 100%;
+		left: 30%;
+	}
+	.purple {
+		background-color: purple;
+		top: 120%;
+		left: 20%;
+	}
+	.blue {
+		background-color: blue;
+		top: 140%;
+		left: 10%;
+	}
+	</style>
+</head>
+<body>
+<div class='box black'></div>
+<div class='box grey'></div>
+<div class='box green'></div>
+<div class='box yellow'></div>
+<div class='box orange'></div>
+<div class='box red'></div>
+<div class='box purple'></div>
+<div class='box blue'></div>
+<script src="/js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var speed = 2000;
+		one()
+		function one() {
+			$('.grey').animate({ left: "+=10%"}, speed);
+	        $('.green').animate({ left: "+=10%"}, speed);
+	        $('.yellow').animate({ left: "+=10%"}, speed);
+	        $('.orange').animate({ left: "-=10%"}, speed);
+	        $('.red').animate({ left: "-=10%"}, speed);
+	        two()
+		}
+		function two() {
+			$('.grey').animate({ left: "+=10%"}, speed);
+	        $('.green').animate({ left: "+=10%"}, speed);
+	        $('.yellow').animate({ left: "-=10%"}, speed);
+	        $('.orange').animate({ left: "-=10%"}, speed);
+	        $('.red').animate({ left: "-=10%"}, speed);
+	        three()
+		}
+		function three() {
+			$('.grey').animate({ left: "+=10%"}, speed);
+	        $('.green').animate({ left: "-=10%"}, speed);
+	        $('.yellow').animate({ left: "-=10%"}, speed);
+	        $('.orange').animate({ left: "-=10%"}, speed);
+	        $('.red').animate({ left: "-=10%"}, speed);
+	        four()
+		}
+		function four() {
+	       	$('.grey').animate({ left: "-=10%"}, speed);
+	        $('.green').animate({ left: "-=10%"}, speed);
+	        $('.yellow').animate({ left: "-=10%"}, speed);
+	        $('.orange').animate({ left: "-=10%"}, speed);
+	        $('.red').animate({ left: "+=10%"}, speed);
+	        five()
+		}
+		function five() {
+	       	$('.grey').animate({ left: "-=10%"}, speed);
+	        $('.green').animate({ left: "-=10%"}, speed);
+	        $('.yellow').animate({ left: "-=10%"}, speed);
+	        $('.orange').animate({ left: "+=10%"}, speed);
+	        $('.red').animate({ left: "+=10%"}, speed);
+	        six()
+		}
+		function six() {
+	       	$('.grey').animate({ left: "-=10%"}, speed);
+	        $('.green').animate({ left: "-=10%"}, speed);
+	        $('.yellow').animate({ left: "+=10%"}, speed);
+	        $('.orange').animate({ left: "+=10%"}, speed);
+	        $('.red').animate({ left: "+=10%"}, speed);
+	        seven()
+		}
+		function seven() {
+	       	$('.grey').animate({ left: "-=10%"}, speed);
+	        $('.green').animate({ left: "+=10%"}, speed);
+	        $('.yellow').animate({ left: "+=10%"}, speed);
+	        $('.orange').animate({ left: "+=10%"}, speed);
+	        $('.red').animate({ left: "+=10%"}, speed);
+	        eight()
+		}
+		function eight() {
+	       	$('.grey').animate({ left: "+=10%"}, speed);
+	        $('.green').animate({ left: "+=10%"}, speed);
+	        $('.yellow').animate({ left: "+=10%"}, speed);
+	        $('.orange').animate({ left: "+=10%"}, speed);
+	        $('.red').animate({ left: "-=10%"}, speed);
+	        one()
+		}
+    });
+</script>
+</body>
+</html>

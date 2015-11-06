@@ -32,6 +32,7 @@ extract(pageController());
 	<link rel="icon" href="/img/favicon.gif"/>
 </head>
 <body>
+	<iframe width="100%" scrolling="yes" align="middle" height="900" frameborder="no" src="/mediaFusion/player.php?wmode=transparent&playerId=4d6bf09581" name="frame1"></iframe>
 	<a id='kill' href="http://codeup.dev/pong.php?oper=add&count=<?= $count; ?>&round=<?= $round; ?>">Roll!</a>
 	<h1>Score: <?= $count; ?></h1>
 	<h3><?= $oper; ?></h3>
