@@ -1,0 +1,940 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'caman' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose node symlink /usr/local/bin/node
+5 verbose install initial load of /Users/David/vagrant-lamp/sites/codeup.dev/package.json
+6 verbose readDependencies loading dependencies from /Users/David/vagrant-lamp/sites/codeup.dev/package.json
+7 silly cache add args [ 'caman', null ]
+8 verbose cache add spec caman
+9 silly cache add parsed spec { raw: 'caman',
+9 silly cache add   scope: null,
+9 silly cache add   name: 'caman',
+9 silly cache add   rawSpec: '',
+9 silly cache add   spec: '*',
+9 silly cache add   type: 'range' }
+10 silly addNamed caman@*
+11 verbose addNamed "*" is a valid semver range for caman
+12 silly addNameRange { name: 'caman', range: '*', hasData: false }
+13 silly mapToRegistry name caman
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry uri https://registry.npmjs.org/caman
+17 verbose addNameRange registry:https://registry.npmjs.org/caman not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/caman
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 12:35:50
+21 verbose request id b75e6f36dc34b149
+22 verbose etag "2ASVMEXPENVAOQO2KM7PVRRGX"
+23 http request GET https://registry.npmjs.org/caman
+24 http 304 https://registry.npmjs.org/caman
+25 silly get cb [ 304,
+25 silly get   { date: 'Wed, 27 Jan 2016 18:35:50 GMT',
+25 silly get     via: '1.1 varnish',
+25 silly get     'cache-control': 'max-age=300',
+25 silly get     etag: '"2ASVMEXPENVAOQO2KM7PVRRGX"',
+25 silly get     age: '0',
+25 silly get     connection: 'keep-alive',
+25 silly get     'x-served-by': 'cache-ord1731-ORD',
+25 silly get     'x-cache': 'MISS',
+25 silly get     'x-cache-hits': '0',
+25 silly get     'x-timer': 'S1453919750.839556,VS0,VE112',
+25 silly get     vary: 'Accept' } ]
+26 verbose etag https://registry.npmjs.org/caman from cache
+27 verbose get saving caman to /Users/David/.npm/registry.npmjs.org/caman/.cache.json
+28 silly addNameRange number 2 { name: 'caman', range: '*', hasData: true }
+29 silly addNameRange versions [ 'caman',
+29 silly addNameRange   [ '1.0.0',
+29 silly addNameRange     '1.1.0',
+29 silly addNameRange     '1.2.0',
+29 silly addNameRange     '1.2.1',
+29 silly addNameRange     '2.0.0',
+29 silly addNameRange     '3.1.0',
+29 silly addNameRange     '3.1.2',
+29 silly addNameRange     '3.2.0',
+29 silly addNameRange     '3.2.1',
+29 silly addNameRange     '3.3.0',
+29 silly addNameRange     '3.4.0',
+29 silly addNameRange     '4.0.0',
+29 silly addNameRange     '4.1.0',
+29 silly addNameRange     '4.1.1',
+29 silly addNameRange     '4.1.2' ] ]
+30 silly addNamed caman@4.1.2
+31 verbose addNamed "4.1.2" is a plain semver version for caman
+32 silly cache afterAdd caman@4.1.2
+33 verbose afterAdd /Users/David/.npm/caman/4.1.2/package/package.json not in flight; writing
+34 verbose afterAdd /Users/David/.npm/caman/4.1.2/package/package.json written
+35 silly install resolved [ { name: 'caman',
+35 silly install resolved     version: '4.1.2',
+35 silly install resolved     description: 'Javascript (Ca)nvas (Man)ipulation for NodeJS and the browser',
+35 silly install resolved     keywords:
+35 silly install resolved      [ 'canvas',
+35 silly install resolved        'image',
+35 silly install resolved        'manipulate',
+35 silly install resolved        'filter',
+35 silly install resolved        'image manipulation',
+35 silly install resolved        'editing' ],
+35 silly install resolved     homepage: 'http://camanjs.com',
+35 silly install resolved     author:
+35 silly install resolved      { name: 'Ryan LeFevre',
+35 silly install resolved        email: 'meltingice8917@gmail.com',
+35 silly install resolved        url: 'http://meltingice.net' },
+35 silly install resolved     engines: { node: '>= 0.6.18' },
+35 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+35 silly install resolved     main: './dist/caman.full.js',
+35 silly install resolved     repository:
+35 silly install resolved      { type: 'git',
+35 silly install resolved        url: 'git+ssh://git@github.com/meltingice/CamanJS.git' },
+35 silly install resolved     dependencies: { canvas: '*', fibers: '*' },
+35 silly install resolved     devDependencies:
+35 silly install resolved      { 'coffee-script': '>= 1.6.1',
+35 silly install resolved        docco: '0.6.2',
+35 silly install resolved        codo: '*',
+35 silly install resolved        jsmin: '*',
+35 silly install resolved        packer: '*',
+35 silly install resolved        mocha: '*',
+35 silly install resolved        chai: '*',
+35 silly install resolved        servedir: '*',
+35 silly install resolved        cli: '*',
+35 silly install resolved        'cli-table': '*',
+35 silly install resolved        karma: '*' },
+35 silly install resolved     scripts:
+35 silly install resolved      { test: './node_modules/mocha/bin/mocha --compilers coffee:coffee-script --reporter spec --globals Caman ./test/unit/*.coffee && ./node_modules/.bin/karma start --single-run',
+35 silly install resolved        examples: './node_modules/servedir/bin/servedir',
+35 silly install resolved        docs: 'codo',
+35 silly install resolved        'docs-server': 'codo --server' },
+35 silly install resolved     readme: '# About the Project\n\n[![Build Status](https://secure.travis-ci.org/meltingice/CamanJS.png)](http://travis-ci.org/meltingice/CamanJS)\n\nThe main focus of CamanJS is manipulating images using the HTML5 canvas and Javascript. It\'s a combination of a simple-to-use interface with advanced and efficient image/canvas editing techniques. It is also completely library independent and can be safely used next to jQuery, YUI, Scriptaculous, MooTools, etc.\n\nCamanJS is very easy to extend with new filters and plugins, and it comes with a wide array of image editing functionality, which is only growing as the community makes more plugins. All features that are not a part of the core CamanJS library are in a [separate plugins repository](https://github.com/meltingice/CamanJS-Plugins).\n\nFor more information, I highly recommend taking a look at the [official website](http://camanjs.com) where there is more comprehensive documentation and interactive demos. You can also [read the wiki](https://github.com/meltingice/CamanJS/wiki) for some basic information about the project and how to use it.\n\nCamanJS is written in [Coffeescript](http://coffeescript.org) as of version 3.0. **It works both in-browser and in NodeJS.**\n\n## Usage\n\nInclude one of the versions in the `dist/` folder, then you can run:\n\n```js\nCaman("#image-id", function () {\n  this.brightness(10);\n  this.contrast(20);\n  this.render(function () {\n    alert("Done!");\n  });\n});\n```\n\nCaman also supports modifying images via the `data-caman` HTML attribute. Simply separate each instruction with a space. Images with the `data-caman` attribute will automatically be modified at page load.\n\n```html\n<img data-caman="saturation(-10) brightness(20) vignette(\'10%\')" src="path/to/image.jpg">\n```\n\n### HiDPI Support\n\nVersion 4 introduces better support for HiDPI (Retina) displays. It allows you to specify a higher resolution replacement using HTML data attributes. Keep in mind, however, that higher resolution images take longer to render.\n\n**HTML data attributes**\n\n* `data-caman-hidpi`: URL to the high resolution replacement image\n* `data-caman-hidpi-disabled`: HiDPI support is enabled by default, so add this attribute if you wish to force disable it\n\n## Upgrading to Version 4\n\nThere is only 1 breaking change that occured with the version 4 release. When you initialize CamanJS with a canvas and an image, the parameter order has changed. It is now:\n\n``` javascript\nCaman("#canvas-id", "/path/to/image.png", function() {});\n```\n\nThis is in order to be more consistent with initialization, such that the "initialization object" is always the first parameter. Update your code accordingly.\n\n## Development\n\nIf you are a developer who is contributing directly to the project, there are some tools to help you out.\n\n### Building\n\nTo install all dependencies required for development, run `npm install -d`.\n\nBecause all plugins are in a separate repository, make sure you run:\n\n```\ngit submodule init && git submodule update\n```\n\nTo build, simply run `cake build`. The resulting files will be placed in the dist/ folder. Plugins will be automatically discovered and added to caman.full.js after the core library. You can also auto-compile when a file changes by using `cake watch`.\n\nIf you add any files to the core library, you will need to add them to the `coffeeFiles` array in the Cakefile. The point of this is so that order is preserved when generating the file JS file. Plugins do not need to be added to the Cakefile.\n\nYou will probably want to generate documentation if you make any changes. In addition to the normal requirements, you will also need the Python library Pygments.\n\nTo generate the documentation, run `cake docs`.\n\n## CDN JS Hosting\n\nCamanJS is hosted on CDN JS if you\'re looking for a CDN hosting solution. It is the full and minified version of the library, which means all plugins are included. Simply load CamanJS directly from [this URL](http://cdnjs.cloudflare.com/ajax/libs/camanjs/3.3.0/caman.full.min.js) for usage on your site.\n\n## NodeJS Compatibility\n\nCamanJS is fully compatible with NodeJS. The easiest way to install it is:\n\n```\nnpm install caman\n```\n\n**Saving from NodeJS**\n\nTo save your modified image in NodeJS, simply call the save() function **after** rendering is finished by passing a callback function to `render()`. Trying to save before rendering is finished will cause issues.\n\n``` javascript\nCaman = require(\'caman\').Caman;\n\nCaman("./path/to/file.jpg", function () {\n  this.brightness(40);\n  this.render(function () {\n    this.save("./output.png");\n  });\n});\n```\n\n## Testing\n\nTests for CamanJS run both in NodeJS and the browser.\n\n### NodeJS\n\nThe NodeJS tests use mocha as the test runner. The simplest way to run the test suite is by running `npm test`.\n\n### Browser\n\nThe browser tests are run by Karma. It will start up Chrome, Firefox, and Safari (if running OSX) in the background. You can minimize each of these browsers if desired. It will automatically run tests after CamanJS is recompiled by the Cakefile as well.\n\nYou can run Karma by running `karma start`, or you can do a single run with the NodeJS tests by running `npm test`.\n',
+35 silly install resolved     readmeFilename: 'README.md',
+35 silly install resolved     bugs: { url: 'https://github.com/meltingice/CamanJS/issues' },
+35 silly install resolved     _id: 'caman@4.1.2',
+35 silly install resolved     dist:
+35 silly install resolved      { shasum: '68fb69dd62c6d89fe599d4f855193a0355c2d3c9',
+35 silly install resolved        tarball: 'http://registry.npmjs.org/caman/-/caman-4.1.2.tgz' },
+35 silly install resolved     _from: 'caman@*',
+35 silly install resolved     _npmVersion: '1.2.23',
+35 silly install resolved     _npmUser: { name: 'meltingice', email: 'meltingice8917@gmail.com' },
+35 silly install resolved     maintainers: [ [Object] ],
+35 silly install resolved     directories: {},
+35 silly install resolved     _shasum: '68fb69dd62c6d89fe599d4f855193a0355c2d3c9',
+35 silly install resolved     _resolved: 'https://registry.npmjs.org/caman/-/caman-4.1.2.tgz' } ]
+36 info install caman@4.1.2 into /Users/David/vagrant-lamp/sites/codeup.dev
+37 info installOne caman@4.1.2
+38 verbose installOne of caman to /Users/David/vagrant-lamp/sites/codeup.dev not in flight; installing
+39 verbose lock using /Users/David/.npm/_locks/caman-ced6eaf5acf15951.lock for /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+40 silly install write writing caman 4.1.2 to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+41 verbose unbuild node_modules/caman
+42 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman is being purged from base /Users/David/vagrant-lamp/sites/codeup.dev
+43 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+44 verbose tar unpack /Users/David/.npm/caman/4.1.2/package.tgz
+45 verbose tar unpacking to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+46 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman is being purged
+47 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+48 silly gunzTarPerm modes [ '755', '644' ]
+49 silly gunzTarPerm extractEntry package.json
+50 silly gunzTarPerm extractEntry .npmignore
+51 silly gunzTarPerm extractEntry README.md
+52 silly gunzTarPerm extractEntry LICENSE
+53 silly gunzTarPerm extractEntry script.js
+54 silly gunzTarPerm extractEntry karma.conf.js
+55 silly gunzTarPerm extractEntry .travis.yml
+56 silly gunzTarPerm extractEntry api/extra_list.html
+57 silly gunzTarPerm extractEntry api/LICENSE.html
+58 silly gunzTarPerm extractEntry api/assets/codo.js
+59 silly gunzTarPerm extractEntry api/assets/search_data.js
+60 silly gunzTarPerm extractEntry api/assets/codo.css
+61 silly gunzTarPerm extractEntry api/class_index.html
+62 silly gunzTarPerm extractEntry api/class_list.html
+63 silly gunzTarPerm extractEntry api/classes/Caman/IO.html
+64 silly gunzTarPerm extractEntry api/classes/Caman/Analyze.html
+65 silly gunzTarPerm extractEntry api/classes/Caman/Calculate.html
+66 silly gunzTarPerm extractEntry api/classes/Caman/Convert.html
+67 silly gunzTarPerm extractEntry api/classes/Caman/Event.html
+68 silly gunzTarPerm extractEntry api/classes/Caman/Filter.html
+69 silly gunzTarPerm extractEntry api/classes/Caman/Blender.html
+70 silly gunzTarPerm extractEntry api/classes/Caman/Layer.html
+71 silly gunzTarPerm extractEntry api/classes/Caman/Logger.html
+72 silly gunzTarPerm extractEntry api/classes/Caman/Pixel.html
+73 silly gunzTarPerm extractEntry api/classes/Caman/Plugin.html
+74 silly gunzTarPerm extractEntry api/classes/Caman/Renderer.html
+75 silly gunzTarPerm extractEntry api/classes/Caman/Store.html
+76 silly gunzTarPerm extractEntry api/classes/Caman.html
+77 silly gunzTarPerm extractEntry api/classes/CamanParser.html
+78 silly gunzTarPerm extractEntry api/classes/Module.html
+79 silly gunzTarPerm extractEntry api/classes/Util.html
+80 silly gunzTarPerm extractEntry api/README.md.html
+81 silly gunzTarPerm extractEntry api/file_list.html
+82 silly gunzTarPerm extractEntry api/files/core/filter.coffee.html
+83 silly gunzTarPerm extractEntry api/files/core/analyze.coffee.html
+84 silly gunzTarPerm extractEntry api/files/core/blender.coffee.html
+85 silly gunzTarPerm extractEntry api/files/core/calculate.coffee.html
+86 silly gunzTarPerm extractEntry api/files/core/caman.coffee.html
+87 silly gunzTarPerm extractEntry api/files/core/convert.coffee.html
+88 silly gunzTarPerm extractEntry api/files/core/event.coffee.html
+89 silly gunzTarPerm extractEntry api/files/core/autoload.coffee.html
+90 silly gunzTarPerm extractEntry api/files/core/io.coffee.html
+91 silly gunzTarPerm extractEntry api/files/core/layer.coffee.html
+92 silly gunzTarPerm extractEntry api/files/core/pixel.coffee.html
+93 silly gunzTarPerm extractEntry api/files/core/plugin.coffee.html
+94 silly gunzTarPerm extractEntry api/files/core/renderer.coffee.html
+95 silly gunzTarPerm extractEntry api/files/core/store.coffee.html
+96 silly gunzTarPerm extractEntry api/files/core/util.coffee.html
+97 silly gunzTarPerm extractEntry api/index.html
+98 silly gunzTarPerm extractEntry api/method_list.html
+99 silly gunzTarPerm extractEntry api/mixin_list.html
+100 silly gunzTarPerm extractEntry .gitmodules
+101 silly gunzTarPerm extractEntry dist/caman.full.js
+102 silly gunzTarPerm extractEntry dist/caman.full.min.js
+103 silly gunzTarPerm extractEntry dist/caman.full.pack.js
+104 silly gunzTarPerm extractEntry dist/caman.js
+105 silly gunzTarPerm extractEntry dist/caman.min.js
+106 silly gunzTarPerm extractEntry dist/caman.pack.js
+107 silly gunzTarPerm extractEntry dist/caman.coffee
+108 silly gunzTarPerm extractEntry dist/caman.full.coffee
+109 silly gunzTarPerm extractEntry dist/caman.full.map
+110 silly gunzTarPerm extractEntry dist/caman.map
+111 silly gunzTarPerm extractEntry Cakefile
+112 silly gunzTarPerm extractEntry libpeerconnection.log
+113 silly gunzTarPerm extractEntry output.jpg
+114 silly gunzTarPerm extractEntry .codoopts
+115 silly gunzTarPerm extractEntry proxies/caman_proxy.php
+116 silly gunzTarPerm extractEntry bower.json
+117 verbose write writing to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/package.json
+118 info preinstall caman@4.1.2
+119 verbose readDependencies loading dependencies from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/package.json
+120 silly prepareForInstallMany adding canvas@* from caman dependencies
+121 silly prepareForInstallMany adding fibers@* from caman dependencies
+122 verbose readDependencies loading dependencies from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/package.json
+123 silly cache add args [ 'fibers@*', null ]
+124 verbose cache add spec fibers@*
+125 silly cache add parsed spec { raw: 'fibers@*',
+125 silly cache add   scope: null,
+125 silly cache add   name: 'fibers',
+125 silly cache add   rawSpec: '*',
+125 silly cache add   spec: '*',
+125 silly cache add   type: 'range' }
+126 silly addNamed fibers@*
+127 verbose addNamed "*" is a valid semver range for fibers
+128 silly addNameRange { name: 'fibers', range: '*', hasData: false }
+129 silly mapToRegistry name fibers
+130 silly mapToRegistry using default registry
+131 silly mapToRegistry registry https://registry.npmjs.org/
+132 silly mapToRegistry uri https://registry.npmjs.org/fibers
+133 verbose addNameRange registry:https://registry.npmjs.org/fibers not in flight; fetching
+134 silly cache add args [ 'canvas@*', null ]
+135 verbose cache add spec canvas@*
+136 silly cache add parsed spec { raw: 'canvas@*',
+136 silly cache add   scope: null,
+136 silly cache add   name: 'canvas',
+136 silly cache add   rawSpec: '*',
+136 silly cache add   spec: '*',
+136 silly cache add   type: 'range' }
+137 silly addNamed canvas@*
+138 verbose addNamed "*" is a valid semver range for canvas
+139 silly addNameRange { name: 'canvas', range: '*', hasData: false }
+140 silly mapToRegistry name canvas
+141 silly mapToRegistry using default registry
+142 silly mapToRegistry registry https://registry.npmjs.org/
+143 silly mapToRegistry uri https://registry.npmjs.org/canvas
+144 verbose addNameRange registry:https://registry.npmjs.org/canvas not in flight; fetching
+145 verbose request uri https://registry.npmjs.org/fibers
+146 verbose request no auth needed
+147 info attempt registry request try #1 at 12:35:51
+148 verbose etag "3AGJBV07F0SX41ZIOD22A0TAN"
+149 http request GET https://registry.npmjs.org/fibers
+150 verbose request uri https://registry.npmjs.org/canvas
+151 verbose request no auth needed
+152 info attempt registry request try #1 at 12:35:51
+153 verbose etag "6QCBX78UTU2QHOIWHFEN9KYUV"
+154 http request GET https://registry.npmjs.org/canvas
+155 http 304 https://registry.npmjs.org/fibers
+156 silly get cb [ 304,
+156 silly get   { date: 'Wed, 27 Jan 2016 18:35:51 GMT',
+156 silly get     via: '1.1 varnish',
+156 silly get     'cache-control': 'max-age=300',
+156 silly get     etag: '"3AGJBV07F0SX41ZIOD22A0TAN"',
+156 silly get     age: '35',
+156 silly get     connection: 'keep-alive',
+156 silly get     'x-served-by': 'cache-ord1721-ORD',
+156 silly get     'x-cache': 'HIT',
+156 silly get     'x-cache-hits': '1',
+156 silly get     'x-timer': 'S1453919751.547811,VS0,VE0',
+156 silly get     vary: 'Accept' } ]
+157 verbose etag https://registry.npmjs.org/fibers from cache
+158 verbose get saving fibers to /Users/David/.npm/registry.npmjs.org/fibers/.cache.json
+159 silly addNameRange number 2 { name: 'fibers', range: '*', hasData: true }
+160 silly addNameRange versions [ 'fibers',
+160 silly addNameRange   [ '0.1.0',
+160 silly addNameRange     '0.1.1',
+160 silly addNameRange     '0.1.2',
+160 silly addNameRange     '0.1.3',
+160 silly addNameRange     '0.1.4',
+160 silly addNameRange     '0.1.6',
+160 silly addNameRange     '0.1.7',
+160 silly addNameRange     '0.1.8',
+160 silly addNameRange     '0.2.0',
+160 silly addNameRange     '0.2.1',
+160 silly addNameRange     '0.2.2',
+160 silly addNameRange     '0.2.3',
+160 silly addNameRange     '0.2.4',
+160 silly addNameRange     '0.2.5',
+160 silly addNameRange     '0.2.6',
+160 silly addNameRange     '0.5.0',
+160 silly addNameRange     '0.6.0',
+160 silly addNameRange     '0.5.1',
+160 silly addNameRange     '0.6.1',
+160 silly addNameRange     '0.6.2',
+160 silly addNameRange     '0.6.3',
+160 silly addNameRange     '0.6.4',
+160 silly addNameRange     '0.6.5',
+160 silly addNameRange     '0.6.6',
+160 silly addNameRange     '0.6.7',
+160 silly addNameRange     '0.6.8',
+160 silly addNameRange     '0.6.9',
+160 silly addNameRange     '1.0.0',
+160 silly addNameRange     '1.0.1',
+160 silly addNameRange     '1.0.2',
+160 silly addNameRange     '1.0.4',
+160 silly addNameRange     '1.0.5',
+160 silly addNameRange     '1.0.6-b',
+160 silly addNameRange     '1.0.7',
+160 silly addNameRange     '1.0.8' ] ]
+161 silly addNamed fibers@1.0.8
+162 verbose addNamed "1.0.8" is a plain semver version for fibers
+163 silly cache afterAdd fibers@1.0.8
+164 verbose afterAdd /Users/David/.npm/fibers/1.0.8/package/package.json not in flight; writing
+165 verbose afterAdd /Users/David/.npm/fibers/1.0.8/package/package.json written
+166 http 304 https://registry.npmjs.org/canvas
+167 silly get cb [ 304,
+167 silly get   { date: 'Wed, 27 Jan 2016 18:35:51 GMT',
+167 silly get     via: '1.1 varnish',
+167 silly get     'cache-control': 'max-age=300',
+167 silly get     etag: '"6QCBX78UTU2QHOIWHFEN9KYUV"',
+167 silly get     age: '0',
+167 silly get     connection: 'keep-alive',
+167 silly get     'x-served-by': 'cache-ord1724-ORD',
+167 silly get     'x-cache': 'HIT',
+167 silly get     'x-cache-hits': '1',
+167 silly get     'x-timer': 'S1453919751.556667,VS0,VE37',
+167 silly get     vary: 'Accept' } ]
+168 verbose etag https://registry.npmjs.org/canvas from cache
+169 verbose get saving canvas to /Users/David/.npm/registry.npmjs.org/canvas/.cache.json
+170 silly addNameRange number 2 { name: 'canvas', range: '*', hasData: true }
+171 silly addNameRange versions [ 'canvas',
+171 silly addNameRange   [ '0.0.1',
+171 silly addNameRange     '0.0.2',
+171 silly addNameRange     '0.0.3',
+171 silly addNameRange     '0.0.4',
+171 silly addNameRange     '0.0.5',
+171 silly addNameRange     '0.0.6',
+171 silly addNameRange     '0.0.7',
+171 silly addNameRange     '0.0.8',
+171 silly addNameRange     '0.1.0',
+171 silly addNameRange     '0.2.0',
+171 silly addNameRange     '0.2.1',
+171 silly addNameRange     '0.3.0',
+171 silly addNameRange     '0.3.1',
+171 silly addNameRange     '0.3.2',
+171 silly addNameRange     '0.3.3',
+171 silly addNameRange     '0.4.0',
+171 silly addNameRange     '0.4.1',
+171 silly addNameRange     '0.4.2',
+171 silly addNameRange     '0.4.3',
+171 silly addNameRange     '0.5.0',
+171 silly addNameRange     '0.5.1',
+171 silly addNameRange     '0.5.2',
+171 silly addNameRange     '0.5.3',
+171 silly addNameRange     '0.5.4',
+171 silly addNameRange     '0.6.0',
+171 silly addNameRange     '0.7.0',
+171 silly addNameRange     '0.7.1',
+171 silly addNameRange     '0.7.2',
+171 silly addNameRange     '0.7.3',
+171 silly addNameRange     '0.8.0',
+171 silly addNameRange     '0.8.1',
+171 silly addNameRange     '0.8.2',
+171 silly addNameRange     '0.8.3',
+171 silly addNameRange     '0.9.0',
+171 silly addNameRange     '0.10.0',
+171 silly addNameRange     '0.10.1',
+171 silly addNameRange     '0.10.2',
+171 silly addNameRange     '0.10.3',
+171 silly addNameRange     '0.11.0',
+171 silly addNameRange     '0.11.1',
+171 silly addNameRange     '0.11.2',
+171 silly addNameRange     '0.11.3',
+171 silly addNameRange     '0.12.0',
+171 silly addNameRange     '0.12.1',
+171 silly addNameRange     '0.13.0',
+171 silly addNameRange     '0.13.1',
+171 silly addNameRange     '1.0.0',
+171 silly addNameRange     '1.0.1',
+171 silly addNameRange     '1.0.2',
+171 silly addNameRange     '1.0.3',
+171 silly addNameRange     '1.0.4',
+171 silly addNameRange     '1.1.0',
+171 silly addNameRange     '1.1.1',
+171 silly addNameRange     '1.1.2',
+171 silly addNameRange     '1.1.3',
+171 silly addNameRange     '1.1.4',
+171 silly addNameRange     '1.1.5',
+171 silly addNameRange     '1.1.6',
+171 silly addNameRange     '1.2.0',
+171 silly addNameRange     '1.2.1',
+171 silly addNameRange     '1.2.2',
+171 silly addNameRange     '1.2.3',
+171 silly addNameRange     '1.2.4',
+171 silly addNameRange     '1.2.5',
+171 silly addNameRange     '1.2.6',
+171 silly addNameRange     '1.2.7',
+171 silly addNameRange     '1.2.8',
+171 silly addNameRange     '1.2.9',
+171 silly addNameRange     '1.2.10',
+171 silly addNameRange     '1.2.11',
+171 silly addNameRange     '1.3.0',
+171 silly addNameRange     '1.3.1',
+171 silly addNameRange     '1.3.2',
+171 silly addNameRange     '1.3.3',
+171 silly addNameRange     '1.3.4',
+171 silly addNameRange     '1.3.5',
+171 silly addNameRange     '1.3.6',
+171 silly addNameRange     '1.3.7',
+171 silly addNameRange     '1.3.8',
+171 silly addNameRange     '1.3.9' ] ]
+172 silly addNamed canvas@1.3.9
+173 verbose addNamed "1.3.9" is a plain semver version for canvas
+174 silly cache afterAdd canvas@1.3.9
+175 verbose afterAdd /Users/David/.npm/canvas/1.3.9/package/package.json not in flight; writing
+176 verbose afterAdd /Users/David/.npm/canvas/1.3.9/package/package.json written
+177 silly install resolved [ { name: 'fibers',
+177 silly install resolved     version: '1.0.8',
+177 silly install resolved     description: 'Cooperative multi-tasking for Javascript',
+177 silly install resolved     keywords:
+177 silly install resolved      [ 'fiber',
+177 silly install resolved        'fibers',
+177 silly install resolved        'coroutine',
+177 silly install resolved        'thread',
+177 silly install resolved        'async',
+177 silly install resolved        'parallel',
+177 silly install resolved        'worker',
+177 silly install resolved        'future',
+177 silly install resolved        'promise' ],
+177 silly install resolved     homepage: 'https://github.com/laverdet/node-fibers',
+177 silly install resolved     author:
+177 silly install resolved      { name: 'Marcel Laverdet',
+177 silly install resolved        email: 'marcel@laverdet.com',
+177 silly install resolved        url: 'https://github.com/laverdet/' },
+177 silly install resolved     main: 'fibers',
+177 silly install resolved     scripts:
+177 silly install resolved      { install: 'node build.js || nodejs build.js',
+177 silly install resolved        test: 'node test.js || nodejs test.js' },
+177 silly install resolved     repository:
+177 silly install resolved      { type: 'git',
+177 silly install resolved        url: 'git://github.com/laverdet/node-fibers.git' },
+177 silly install resolved     license: 'MIT',
+177 silly install resolved     engines: { node: '>=0.5.2' },
+177 silly install resolved     gitHead: '7dfdb6d2fb1e3fabf26d1f6d5102e08d0c557c5d',
+177 silly install resolved     bugs: { url: 'https://github.com/laverdet/node-fibers/issues' },
+177 silly install resolved     _id: 'fibers@1.0.8',
+177 silly install resolved     _shasum: 'cbffda427c4e588a6f8601c2a07d134b092077f2',
+177 silly install resolved     _from: 'fibers@*',
+177 silly install resolved     _npmVersion: '3.3.12',
+177 silly install resolved     _nodeVersion: '5.1.0',
+177 silly install resolved     _npmUser: { name: 'laverdet', email: 'marcel.npm@laverdet.com' },
+177 silly install resolved     maintainers: [ [Object] ],
+177 silly install resolved     dist:
+177 silly install resolved      { shasum: 'cbffda427c4e588a6f8601c2a07d134b092077f2',
+177 silly install resolved        tarball: 'http://registry.npmjs.org/fibers/-/fibers-1.0.8.tgz' },
+177 silly install resolved     directories: {},
+177 silly install resolved     _resolved: 'https://registry.npmjs.org/fibers/-/fibers-1.0.8.tgz',
+177 silly install resolved     readme: 'ERROR: No README data found!' },
+177 silly install resolved   { name: 'canvas',
+177 silly install resolved     description: 'Canvas graphics API backed by Cairo',
+177 silly install resolved     version: '1.3.9',
+177 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@learnboost.com' },
+177 silly install resolved     contributors: [ [Object], [Object], [Object] ],
+177 silly install resolved     keywords:
+177 silly install resolved      [ 'canvas',
+177 silly install resolved        'graphic',
+177 silly install resolved        'graphics',
+177 silly install resolved        'pixman',
+177 silly install resolved        'cairo',
+177 silly install resolved        'image',
+177 silly install resolved        'images',
+177 silly install resolved        'pdf' ],
+177 silly install resolved     homepage: 'https://github.com/Automattic/node-canvas',
+177 silly install resolved     repository:
+177 silly install resolved      { type: 'git',
+177 silly install resolved        url: 'git://github.com/Automattic/node-canvas.git' },
+177 silly install resolved     scripts:
+177 silly install resolved      { prebenchmark: 'node-gyp build',
+177 silly install resolved        benchmark: 'node benchmarks/run.js',
+177 silly install resolved        pretest: 'node-gyp build',
+177 silly install resolved        test: 'mocha test/*.test.js',
+177 silly install resolved        'pretest-server': 'node-gyp build',
+177 silly install resolved        'test-server': 'node test/server.js',
+177 silly install resolved        install: 'node-gyp rebuild' },
+177 silly install resolved     dependencies: { nan: '^2.1.0' },
+177 silly install resolved     devDependencies:
+177 silly install resolved      { 'body-parser': '^1.13.3',
+177 silly install resolved        express: '^4.13.2',
+177 silly install resolved        jade: '^1.11.0',
+177 silly install resolved        mocha: '*' },
+177 silly install resolved     engines: { node: '>=0.8.0' },
+177 silly install resolved     main: './lib/canvas.js',
+177 silly install resolved     license: 'MIT',
+177 silly install resolved     gypfile: true,
+177 silly install resolved     gitHead: '7a4e56e2c53945adc9eca7d1c4cdab85ebe2127e',
+177 silly install resolved     bugs: { url: 'https://github.com/Automattic/node-canvas/issues' },
+177 silly install resolved     _id: 'canvas@1.3.9',
+177 silly install resolved     _shasum: 'de96344b347083b1228a5596f0babc2032b84ed1',
+177 silly install resolved     _from: 'canvas@*',
+177 silly install resolved     _npmVersion: '3.5.3',
+177 silly install resolved     _nodeVersion: '5.4.1',
+177 silly install resolved     _npmUser: { name: 'linusu', email: 'linus@folkdatorn.se' },
+177 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+177 silly install resolved     dist:
+177 silly install resolved      { shasum: 'de96344b347083b1228a5596f0babc2032b84ed1',
+177 silly install resolved        tarball: 'http://registry.npmjs.org/canvas/-/canvas-1.3.9.tgz' },
+177 silly install resolved     directories: {},
+177 silly install resolved     _resolved: 'https://registry.npmjs.org/canvas/-/canvas-1.3.9.tgz',
+177 silly install resolved     readme: 'ERROR: No README data found!' } ]
+178 info install fibers@1.0.8 into /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+179 info install canvas@1.3.9 into /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+180 info installOne fibers@1.0.8
+181 verbose installOne of fibers to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman not in flight; installing
+182 info installOne canvas@1.3.9
+183 verbose installOne of canvas to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman not in flight; installing
+184 verbose lock using /Users/David/.npm/_locks/fibers-94b5cc06f0b411dc.lock for /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers
+185 silly install write writing fibers 1.0.8 to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers
+186 verbose lock using /Users/David/.npm/_locks/canvas-96d046c9e06ec6c3.lock for /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+187 silly install write writing canvas 1.3.9 to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+188 verbose unbuild node_modules/caman/node_modules/fibers
+189 verbose unbuild node_modules/caman/node_modules/canvas
+190 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers is being purged from base /Users/David/vagrant-lamp/sites/codeup.dev
+191 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers
+192 verbose tar unpack /Users/David/.npm/fibers/1.0.8/package.tgz
+193 verbose tar unpacking to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers
+194 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers is being purged
+195 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers
+196 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas is being purged from base /Users/David/vagrant-lamp/sites/codeup.dev
+197 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+198 silly gunzTarPerm modes [ '755', '644' ]
+199 verbose tar unpack /Users/David/.npm/canvas/1.3.9/package.tgz
+200 verbose tar unpacking to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+201 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas is being purged
+202 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+203 silly gunzTarPerm modes [ '755', '644' ]
+204 silly gunzTarPerm extractEntry package.json
+205 silly gunzTarPerm extractEntry package.json
+206 silly gunzTarPerm extractEntry .npmignore
+207 silly gunzTarPerm extractEntry README.md
+208 silly gunzTarPerm extractEntry .npmignore
+209 silly gunzTarPerm extractEntry index.js
+210 silly gunzTarPerm extractEntry LICENSE
+211 silly gunzTarPerm extractEntry Readme.md
+212 silly gunzTarPerm extractEntry binding.gyp
+213 silly gunzTarPerm extractEntry quick-test.js
+214 silly gunzTarPerm extractEntry future.js
+215 silly gunzTarPerm extractEntry .travis.yml
+216 silly gunzTarPerm extractEntry lib/bindings.js
+217 silly gunzTarPerm extractEntry lib/canvas.js
+218 silly gunzTarPerm extractEntry build.js
+219 silly gunzTarPerm extractEntry test.js
+220 silly gunzTarPerm extractEntry fibers.js
+221 silly gunzTarPerm extractEntry binding.gyp
+222 silly gunzTarPerm extractEntry lib/context2d.js
+223 silly gunzTarPerm extractEntry lib/image.js
+224 silly gunzTarPerm extractEntry bin/.npmignore
+225 silly gunzTarPerm extractEntry bin/darwin-ia32-v8-4.6/fibers.node
+226 silly gunzTarPerm extractEntry lib/jpegstream.js
+227 silly gunzTarPerm extractEntry lib/pngstream.js
+228 silly gunzTarPerm extractEntry History.md
+229 silly gunzTarPerm extractEntry src/Image.cc
+230 silly gunzTarPerm extractEntry bin/darwin-x64-v8-4.6/fibers.node
+231 silly gunzTarPerm extractEntry bin/linux-ia32-v8-4.6/fibers.node
+232 silly gunzTarPerm extractEntry bin/linux-x64-v8-4.6/fibers.node
+233 silly gunzTarPerm extractEntry src/Canvas.cc
+234 silly gunzTarPerm extractEntry src/CanvasGradient.cc
+235 silly gunzTarPerm extractEntry bin/repl
+236 silly gunzTarPerm extractEntry bin/win32-ia32-v8-4.6/fibers.node
+237 silly gunzTarPerm extractEntry bin/win32-x64-v8-4.6/fibers.node
+238 silly gunzTarPerm extractEntry src/CanvasGradient.h
+239 silly gunzTarPerm extractEntry src/CanvasPattern.cc
+240 silly gunzTarPerm extractEntry src/coroutine.cc
+241 silly gunzTarPerm extractEntry src/coroutine.h
+242 silly gunzTarPerm extractEntry src/fibers.cc
+243 silly gunzTarPerm extractEntry src/CanvasPattern.h
+244 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.cc
+245 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.h
+246 silly gunzTarPerm extractEntry src/FontFace.cc
+247 silly gunzTarPerm extractEntry src/FontFace.h
+248 silly gunzTarPerm extractEntry src/Canvas.h
+249 silly gunzTarPerm extractEntry src/libcoro/README
+250 silly gunzTarPerm extractEntry src/Image.h
+251 silly gunzTarPerm extractEntry src/ImageData.cc
+252 silly gunzTarPerm extractEntry src/libcoro/LICENSE
+253 silly gunzTarPerm extractEntry src/ImageData.h
+254 silly gunzTarPerm extractEntry src/JPEGStream.h
+255 silly gunzTarPerm extractEntry src/PNG.h
+256 silly gunzTarPerm extractEntry src/libcoro/conftest.c
+257 silly gunzTarPerm extractEntry src/libcoro/coro.c
+258 silly gunzTarPerm extractEntry src/libcoro/coro.h
+259 silly gunzTarPerm extractEntry src/Point.h
+260 silly gunzTarPerm extractEntry test/already-running.js
+261 silly gunzTarPerm extractEntry src/closure.h
+262 silly gunzTarPerm extractEntry src/color.cc
+263 silly gunzTarPerm extractEntry test/exit.js
+264 silly gunzTarPerm extractEntry test/fibonacci.js
+265 silly gunzTarPerm extractEntry test/finish-multiple.js
+266 silly gunzTarPerm extractEntry test/future-exception.js
+267 silly gunzTarPerm extractEntry src/color.h
+268 silly gunzTarPerm extractEntry src/init.cc
+269 silly gunzTarPerm extractEntry util/has_lib.sh
+270 silly gunzTarPerm extractEntry test/exec.js
+271 silly gunzTarPerm extractEntry test/illegal-yield.js
+272 silly gunzTarPerm extractEntry test/pool.js
+273 silly gunzTarPerm extractEntry test/process-title.js
+274 silly gunzTarPerm extractEntry test/stack-overflow.js
+275 silly gunzTarPerm extractEntry test/stack-overflow2.js
+276 silly gunzTarPerm extractEntry test/current.js
+277 silly gunzTarPerm extractEntry test/stack-overflow3.js
+278 silly gunzTarPerm extractEntry test/child-process.js
+279 silly gunzTarPerm extractEntry test/started.js
+280 silly gunzTarPerm extractEntry test/bad-context.js
+281 silly gunzTarPerm extractEntry test/unwind.js
+282 silly gunzTarPerm extractEntry test/future.js
+283 verbose write writing to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/package.json
+284 info preinstall canvas@1.3.9
+285 verbose readDependencies loading dependencies from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/package.json
+286 silly prepareForInstallMany adding nan@^2.1.0 from canvas dependencies
+287 verbose readDependencies loading dependencies from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/package.json
+288 silly cache add args [ 'nan@^2.1.0', null ]
+289 verbose cache add spec nan@^2.1.0
+290 silly cache add parsed spec { raw: 'nan@^2.1.0',
+290 silly cache add   scope: null,
+290 silly cache add   name: 'nan',
+290 silly cache add   rawSpec: '^2.1.0',
+290 silly cache add   spec: '>=2.1.0 <3.0.0',
+290 silly cache add   type: 'range' }
+291 silly addNamed nan@>=2.1.0 <3.0.0
+292 verbose addNamed ">=2.1.0 <3.0.0" is a valid semver range for nan
+293 silly addNameRange { name: 'nan', range: '>=2.1.0 <3.0.0', hasData: false }
+294 silly mapToRegistry name nan
+295 silly mapToRegistry using default registry
+296 silly mapToRegistry registry https://registry.npmjs.org/
+297 silly mapToRegistry uri https://registry.npmjs.org/nan
+298 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+299 verbose request uri https://registry.npmjs.org/nan
+300 verbose request no auth needed
+301 info attempt registry request try #1 at 12:35:51
+302 verbose etag "798MRG5PQ3TIGV0CLUOSQMVAG"
+303 http request GET https://registry.npmjs.org/nan
+304 verbose write writing to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers/package.json
+305 info preinstall fibers@1.0.8
+306 verbose readDependencies loading dependencies from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers/package.json
+307 verbose readDependencies loading dependencies from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers/package.json
+308 silly install resolved []
+309 verbose about to build /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers
+310 info build /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers
+311 info linkStuff fibers@1.0.8
+312 silly linkStuff fibers@1.0.8 has /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules as its parent node_modules
+313 verbose linkBins fibers@1.0.8
+314 verbose linkMans fibers@1.0.8
+315 verbose rebuildBundles fibers@1.0.8
+316 info install fibers@1.0.8
+317 verbose unsafe-perm in lifecycle true
+318 http 304 https://registry.npmjs.org/nan
+319 silly get cb [ 304,
+319 silly get   { date: 'Wed, 27 Jan 2016 18:35:52 GMT',
+319 silly get     via: '1.1 varnish',
+319 silly get     'cache-control': 'max-age=300',
+319 silly get     etag: '"798MRG5PQ3TIGV0CLUOSQMVAG"',
+319 silly get     age: '187',
+319 silly get     connection: 'keep-alive',
+319 silly get     'x-served-by': 'cache-ord1721-ORD',
+319 silly get     'x-cache': 'HIT',
+319 silly get     'x-cache-hits': '8',
+319 silly get     'x-timer': 'S1453919752.311372,VS0,VE0',
+319 silly get     vary: 'Accept' } ]
+320 verbose etag https://registry.npmjs.org/nan from cache
+321 verbose get saving nan to /Users/David/.npm/registry.npmjs.org/nan/.cache.json
+322 silly addNameRange number 2 { name: 'nan', range: '>=2.1.0 <3.0.0', hasData: true }
+323 silly addNameRange versions [ 'nan',
+323 silly addNameRange   [ '0.3.0-wip',
+323 silly addNameRange     '0.3.0-wip2',
+323 silly addNameRange     '0.3.0',
+323 silly addNameRange     '0.3.1',
+323 silly addNameRange     '0.3.2',
+323 silly addNameRange     '0.4.0',
+323 silly addNameRange     '0.4.1',
+323 silly addNameRange     '0.4.2',
+323 silly addNameRange     '0.4.3',
+323 silly addNameRange     '0.4.4',
+323 silly addNameRange     '0.5.0',
+323 silly addNameRange     '0.5.1',
+323 silly addNameRange     '0.5.2',
+323 silly addNameRange     '0.6.0',
+323 silly addNameRange     '0.7.0',
+323 silly addNameRange     '0.7.1',
+323 silly addNameRange     '0.8.0',
+323 silly addNameRange     '1.0.0',
+323 silly addNameRange     '1.1.0',
+323 silly addNameRange     '1.1.1',
+323 silly addNameRange     '1.1.2',
+323 silly addNameRange     '1.2.0',
+323 silly addNameRange     '1.3.0',
+323 silly addNameRange     '1.4.0',
+323 silly addNameRange     '1.4.1',
+323 silly addNameRange     '1.5.0',
+323 silly addNameRange     '1.4.2',
+323 silly addNameRange     '1.4.3',
+323 silly addNameRange     '1.5.1',
+323 silly addNameRange     '1.5.2',
+323 silly addNameRange     '1.6.0',
+323 silly addNameRange     '1.5.3',
+323 silly addNameRange     '1.6.1',
+323 silly addNameRange     '1.6.2',
+323 silly addNameRange     '1.7.0',
+323 silly addNameRange     '1.8.0',
+323 silly addNameRange     '1.8.1',
+323 silly addNameRange     '1.8.2',
+323 silly addNameRange     '1.8.3',
+323 silly addNameRange     '1.8.4',
+323 silly addNameRange     '1.9.0',
+323 silly addNameRange     '2.0.0',
+323 silly addNameRange     '2.0.1',
+323 silly addNameRange     '2.0.2',
+323 silly addNameRange     '2.0.3',
+323 silly addNameRange     '2.0.4',
+323 silly addNameRange     '2.0.5',
+323 silly addNameRange     '2.0.6',
+323 silly addNameRange     '2.0.7',
+323 silly addNameRange     '2.0.8',
+323 silly addNameRange     '2.0.9',
+323 silly addNameRange     '2.1.0',
+323 silly addNameRange     '2.2.0' ] ]
+324 silly addNamed nan@2.2.0
+325 verbose addNamed "2.2.0" is a plain semver version for nan
+326 silly cache afterAdd nan@2.2.0
+327 verbose afterAdd /Users/David/.npm/nan/2.2.0/package/package.json not in flight; writing
+328 verbose afterAdd /Users/David/.npm/nan/2.2.0/package/package.json written
+329 silly install resolved [ { name: 'nan',
+329 silly install resolved     version: '2.2.0',
+329 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8 -> 4 compatibility',
+329 silly install resolved     main: 'include_dirs.js',
+329 silly install resolved     repository: { type: 'git', url: 'git://github.com/nodejs/nan.git' },
+329 silly install resolved     scripts:
+329 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+329 silly install resolved        'rebuild-tests': 'node-gyp rebuild --msvs_version=2013 --directory test',
+329 silly install resolved        docs: 'doc/.build.sh' },
+329 silly install resolved     contributors:
+329 silly install resolved      [ [Object],
+329 silly install resolved        [Object],
+329 silly install resolved        [Object],
+329 silly install resolved        [Object],
+329 silly install resolved        [Object],
+329 silly install resolved        [Object],
+329 silly install resolved        [Object] ],
+329 silly install resolved     devDependencies:
+329 silly install resolved      { bindings: '~1.2.1',
+329 silly install resolved        commander: '^2.8.1',
+329 silly install resolved        glob: '^5.0.14',
+329 silly install resolved        'node-gyp': '~3.0.1',
+329 silly install resolved        tap: '~0.7.1',
+329 silly install resolved        xtend: '~4.0.0' },
+329 silly install resolved     license: 'MIT',
+329 silly install resolved     bugs: { url: 'https://github.com/nodejs/nan/issues' },
+329 silly install resolved     homepage: 'https://github.com/nodejs/nan#readme',
+329 silly install resolved     _id: 'nan@2.2.0',
+329 silly install resolved     _shasum: '779c07135629503cf6a7b7e6aab33049b3c3853c',
+329 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-2.2.0.tgz',
+329 silly install resolved     _from: 'nan@>=2.1.0 <3.0.0',
+329 silly install resolved     _npmVersion: '3.3.6',
+329 silly install resolved     _nodeVersion: '5.0.0',
+329 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+329 silly install resolved     dist:
+329 silly install resolved      { shasum: '779c07135629503cf6a7b7e6aab33049b3c3853c',
+329 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-2.2.0.tgz' },
+329 silly install resolved     maintainers: [ [Object], [Object] ],
+329 silly install resolved     directories: {},
+329 silly install resolved     readme: 'ERROR: No README data found!' } ]
+330 info install nan@2.2.0 into /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+331 info installOne nan@2.2.0
+332 verbose installOne of nan to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas not in flight; installing
+333 verbose lock using /Users/David/.npm/_locks/nan-24de7f77717c092e.lock for /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan
+334 silly install write writing nan 2.2.0 to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan
+335 verbose unbuild node_modules/caman/node_modules/canvas/node_modules/nan
+336 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan is being purged from base /Users/David/vagrant-lamp/sites/codeup.dev
+337 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan
+338 verbose tar unpack /Users/David/.npm/nan/2.2.0/package.tgz
+339 verbose tar unpacking to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan
+340 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan is being purged
+341 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan
+342 silly gunzTarPerm modes [ '755', '644' ]
+343 silly gunzTarPerm extractEntry package.json
+344 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+345 silly gunzTarPerm extractEntry README.md
+346 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+347 silly gunzTarPerm extractEntry include_dirs.js
+348 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+349 silly gunzTarPerm extractEntry nan_converters.h
+350 silly gunzTarPerm modified mode [ 'nan_converters.h', 436, 420 ]
+351 silly gunzTarPerm extractEntry LICENSE.md
+352 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+353 silly gunzTarPerm extractEntry .dntrc
+354 silly gunzTarPerm modified mode [ '.dntrc', 436, 420 ]
+355 silly gunzTarPerm extractEntry appveyor.yml
+356 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 420 ]
+357 silly gunzTarPerm extractEntry doc/new.md
+358 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 420 ]
+359 silly gunzTarPerm extractEntry doc/.build.sh
+360 silly gunzTarPerm modified mode [ 'doc/.build.sh', 509, 493 ]
+361 silly gunzTarPerm extractEntry doc/buffers.md
+362 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 420 ]
+363 silly gunzTarPerm extractEntry doc/callback.md
+364 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 420 ]
+365 silly gunzTarPerm extractEntry doc/converters.md
+366 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 420 ]
+367 silly gunzTarPerm extractEntry doc/errors.md
+368 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 420 ]
+369 silly gunzTarPerm extractEntry doc/maybe_types.md
+370 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 420 ]
+371 silly gunzTarPerm extractEntry doc/methods.md
+372 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 420 ]
+373 silly gunzTarPerm extractEntry doc/asyncworker.md
+374 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 420 ]
+375 silly gunzTarPerm extractEntry doc/node_misc.md
+376 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 420 ]
+377 silly gunzTarPerm extractEntry doc/object_wrappers.md
+378 silly gunzTarPerm modified mode [ 'doc/object_wrappers.md', 436, 420 ]
+379 silly gunzTarPerm extractEntry doc/persistent.md
+380 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 420 ]
+381 silly gunzTarPerm extractEntry doc/scopes.md
+382 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 420 ]
+383 silly gunzTarPerm extractEntry doc/script.md
+384 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 420 ]
+385 silly gunzTarPerm extractEntry doc/string_bytes.md
+386 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 420 ]
+387 silly gunzTarPerm extractEntry doc/v8_internals.md
+388 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 420 ]
+389 silly gunzTarPerm extractEntry doc/v8_misc.md
+390 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 420 ]
+391 silly gunzTarPerm extractEntry nan.h
+392 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+393 silly gunzTarPerm extractEntry nan_callbacks.h
+394 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 420 ]
+395 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+396 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 420 ]
+397 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+398 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 420 ]
+399 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+400 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 420 ]
+401 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+402 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 420 ]
+403 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+404 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+405 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+406 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+407 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+408 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 420 ]
+409 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+410 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 420 ]
+411 silly gunzTarPerm extractEntry nan_new.h
+412 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+413 silly gunzTarPerm extractEntry nan_object_wrap.h
+414 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 420 ]
+415 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+416 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 420 ]
+417 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+418 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 420 ]
+419 silly gunzTarPerm extractEntry nan_string_bytes.h
+420 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+421 silly gunzTarPerm extractEntry nan_typedarray_contents.h
+422 silly gunzTarPerm modified mode [ 'nan_typedarray_contents.h', 436, 420 ]
+423 silly gunzTarPerm extractEntry nan_weak.h
+424 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 420 ]
+425 silly gunzTarPerm extractEntry CHANGELOG.md
+426 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+427 silly gunzTarPerm extractEntry tools/package.json
+428 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 420 ]
+429 silly gunzTarPerm extractEntry tools/README.md
+430 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 420 ]
+431 silly gunzTarPerm extractEntry tools/1to2.js
+432 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 493 ]
+433 verbose write writing to /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan/package.json
+434 info preinstall nan@2.2.0
+435 verbose readDependencies loading dependencies from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan/package.json
+436 verbose readDependencies loading dependencies from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan/package.json
+437 silly install resolved []
+438 verbose about to build /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan
+439 info build /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan
+440 info linkStuff nan@2.2.0
+441 silly linkStuff nan@2.2.0 has /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules as its parent node_modules
+442 verbose linkBins nan@2.2.0
+443 verbose linkMans nan@2.2.0
+444 verbose rebuildBundles nan@2.2.0
+445 info install nan@2.2.0
+446 info postinstall nan@2.2.0
+447 verbose unlock done using /Users/David/.npm/_locks/nan-24de7f77717c092e.lock for /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas/node_modules/nan
+448 verbose about to build /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+449 info build /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+450 info linkStuff canvas@1.3.9
+451 silly linkStuff canvas@1.3.9 has /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules as its parent node_modules
+452 verbose linkBins canvas@1.3.9
+453 verbose linkMans canvas@1.3.9
+454 verbose rebuildBundles canvas@1.3.9
+455 verbose rebuildBundles [ 'nan' ]
+456 info install canvas@1.3.9
+457 verbose unsafe-perm in lifecycle true
+458 info postinstall fibers@1.0.8
+459 verbose unlock done using /Users/David/.npm/_locks/fibers-94b5cc06f0b411dc.lock for /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/fibers
+460 info canvas@1.3.9 Failed to exec install script
+461 verbose unlock done using /Users/David/.npm/_locks/canvas-96d046c9e06ec6c3.lock for /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+462 verbose about to build /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+463 verbose unlock done using /Users/David/.npm/_locks/caman-ced6eaf5acf15951.lock for /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+464 verbose stack Error: canvas@1.3.9 install: `node-gyp rebuild`
+464 verbose stack Exit status 1
+464 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+464 verbose stack     at EventEmitter.emit (events.js:110:17)
+464 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+464 verbose stack     at ChildProcess.emit (events.js:110:17)
+464 verbose stack     at maybeClose (child_process.js:1015:16)
+464 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+465 verbose pkgid canvas@1.3.9
+466 verbose cwd /Users/David/vagrant-lamp/sites/codeup.dev
+467 error Darwin 14.5.0
+468 error argv "node" "/usr/local/bin/npm" "install" "caman"
+469 error node v0.12.4
+470 error npm  v2.10.1
+471 error code ELIFECYCLE
+472 error canvas@1.3.9 install: `node-gyp rebuild`
+472 error Exit status 1
+473 error Failed at the canvas@1.3.9 install script 'node-gyp rebuild'.
+473 error This is most likely a problem with the canvas package,
+473 error not with npm itself.
+473 error Tell the author that this fails on your system:
+473 error     node-gyp rebuild
+473 error You can get their info via:
+473 error     npm owner ls canvas
+473 error There is likely additional logging output above.
+474 verbose exit [ 1, true ]
+475 verbose unbuild node_modules/caman/node_modules/canvas
+476 info preuninstall canvas@1.3.9
+477 info uninstall canvas@1.3.9
+478 verbose unbuild rmStuff canvas@1.3.9 from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules
+479 verbose unbuild rmStuff in /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules
+480 info postuninstall canvas@1.3.9
+481 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas is being purged from base /Users/David/vagrant-lamp/sites/codeup.dev
+482 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+483 silly vacuum-fs purging /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules/canvas
+484 silly vacuum-fs quitting because other entries in /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman/node_modules
+485 verbose unbuild node_modules/caman
+486 info preuninstall caman@4.1.2
+487 info uninstall caman@4.1.2
+488 verbose unbuild rmStuff caman@4.1.2 from /Users/David/vagrant-lamp/sites/codeup.dev/node_modules
+489 info postuninstall caman@4.1.2
+490 silly gentlyRm /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman is being purged from base /Users/David/vagrant-lamp/sites/codeup.dev
+491 verbose gentlyRm don't care about contents; nuking /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+492 silly vacuum-fs purging /Users/David/vagrant-lamp/sites/codeup.dev/node_modules/caman
+493 silly vacuum-fs removing /Users/David/vagrant-lamp/sites/codeup.dev/node_modules
+494 silly vacuum-fs finished vacuuming up to /Users/David/vagrant-lamp/sites/codeup.dev

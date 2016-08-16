@@ -1,0 +1,1 @@
+<div class="panel-heading"><img src="logo-orange.png" alt="" class="img-responsive"/><a href="http://mediafusionapp.com/" title="" class="close">&times;</a></div>
